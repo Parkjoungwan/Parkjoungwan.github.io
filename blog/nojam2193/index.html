@@ -2,7 +2,7 @@
 <html lang="en-us">
 
 <head>
-  <title>[Algorithm, C&#43;&#43;] 백준 2156 : 포도주 시식 | kkeujeogblog</title>
+  <title>[Algorithm, C&#43;&#43;] 백준 2193 : 이친수 | kkeujeogblog</title>
 
   <meta charset="UTF-8">
   <meta name="language" content="en">
@@ -49,8 +49,8 @@
             "@id": "https:\/\/parkjoungwan.github.io"
       },
       "articleSection" : "blog",
-      "name" : "[Algorithm, C\u002b\u002b] 백준 2156 : 포도주 시식",
-      "headline" : "[Algorithm, C\u002b\u002b] 백준 2156 : 포도주 시식",
+      "name" : "[Algorithm, C\u002b\u002b] 백준 2193 : 이친수",
+      "headline" : "[Algorithm, C\u002b\u002b] 백준 2193 : 이친수",
       "description" : "",
       "inLanguage" : "en-US",
       "author" : "",
@@ -59,10 +59,10 @@
       "accountablePerson" : "",
       "copyrightHolder" : "",
       "copyrightYear" : "2021",
-      "datePublished": "2021-03-17 13:51:30 \u002b0900 KST",
-      "dateModified" : "2021-03-17 13:51:30 \u002b0900 KST",
-      "url" : "https:\/\/parkjoungwan.github.io\/blog\/nojam2156\/",
-      "wordCount" : "211",
+      "datePublished": "2021-03-17 16:51:45 \u002b0900 KST",
+      "dateModified" : "2021-03-17 16:51:45 \u002b0900 KST",
+      "url" : "https:\/\/parkjoungwan.github.io\/blog\/nojam2193\/",
+      "wordCount" : "176",
       "keywords" : ["Blog"]
     }
   
@@ -115,71 +115,62 @@ if (!doNotTrack) {
       <div class="post__container">
         <div class="post">
           <header class="post__header">
-            <h1 id="post__title">[Algorithm, C&#43;&#43;] 백준 2156 : 포도주 시식</h1>
-            <time datetime="2021-03-17 13:51:30 &#43;0900 KST" class="post__date">2021-03-17</time> 
+            <h1 id="post__title">[Algorithm, C&#43;&#43;] 백준 2193 : 이친수</h1>
+            <time datetime="2021-03-17 16:51:45 &#43;0900 KST" class="post__date">2021-03-17</time> 
           </header>
           <article class="post__content">
               
 <h1 id="문제">문제</h1>
-<p>간략화 하자면 다음과 같다.</p>
+<p>간략하게 나타내면 다음과 같다.</p>
+<p>이친수란, 다음의 규칙을 만족하는 이진수이다.</p>
 <ol>
-<li>1번째 부터 n 까지의 숫자를 더할 것이다.</li>
-<li>연속된 숫자는 2개까지 더할 수 있다.</li>
-<li>위 규칙을 지키면서 만들 수 있는 최대의 숫자를 만들어라.</li>
+<li>이친수는 0으로 시작하지 않는다.</li>
+<li>이친수는 1이 연속 두번으로 올 수 없다.</li>
 </ol>
+<p>입력값 N이 주어졌을때, N자리 수의 이친수 개수를 구하자.</p>
 <h1 id="예제">예제</h1>
-<pre><code class="language-cpp">6
-6
-10
-13
-9
-8
-1
+<pre><code class="language-cpp">3
 </code></pre>
 <h1 id="출력">출력</h1>
-<pre><code class="language-cpp">33
+<pre><code class="language-cpp">2
 </code></pre>
 <h1 id="풀이">풀이</h1>
-<p>이 문제는 이전과 같은 DP 다이나믹 프로그래밍의 일종이다.</p>
-<p>내가 사용한 해법을 최대한 요약하면 다음과 같다.</p>
-<p><strong>&ldquo;각 최대값은 이전 최대값에 다음 수를 더해서 구할 수 있다. 4개 씩 끊어서 생각하자. 1 3 4로 취할 거냐 아니면 2 4로 취할 거냐. 그것도 아니면 1 4로 취할거냐.&quot;</strong></p>
+<p>이 문제도 이전과 같은 DP 다이나믹 프로그래밍 문제이다.</p>
+<p>내가 사용한 해법은 요약하면 다음과 같다.</p>
+<p><strong>&ldquo;마지막 숫자가 0으로 끝나는 이친수는 0과 1을 붙일 수 있고, 마지막 숫자가 1로 끝나는 이친수는 0을 붙일 수 있다.&quot;</strong></p>
 <p>점화식으로 나타내면 다음과 같다.</p>
-<pre><code class="language-cpp">dp: 해당 순서에 생길 수 있는 최대값
-arr: 해당 순서의 값
-dp[i]는 dp[i - 3] + arr[i] + arr[i - 1] 와 dp[i - 2] + arr[i] 중 큰 것
-dp[i]는 dp[i - 1]과 dp[i]를 비교해서 더 큰 것
+<pre><code class="language-cpp">dpzero[i] = dpzero[i - 1] + dpone[i - 1];
+dpone[i] = dpzero[i- 1];
+dp[i] = dpzero + dpone;
+dpzero + dpone 은 이친수의 개수
 </code></pre>
+<p>단, 이 문제는 90까지의 경우를 생각하고 INT값을 초과하는 값을 가질 수도 있기 때문에 변수 자료형에 신경써줘야한다.</p>
 <h1 id="코드">코드</h1>
 <pre><code class="language-cpp">#include &lt;iostream&gt;
-#include &lt;algorithm&gt;
 
 using namespace std;
 
-int	main(){
+int main()
+{
 	int N;
 	int i;
-	int dp[10001];
-	int arr[10001];
+	long long dpzero[91];
+	long long dpone[91];
 
 	cin &gt;&gt; N;
-	i = 1;
-	dp[0] = 0;
-	arr[0] = 0;
-	while (i &lt;= N){
-		cin &gt;&gt; arr[i];
-		dp [i] = 0;
+	dpzero[0] = 0;
+	dpone[0] = 0;
+	dpzero[1] = 0;
+	dpone[1] = 1;
+	i = 2;
+	while (i &lt;= N)
+	{
+		dpzero[i] = dpzero[i - 1] + dpone[i - 1];
+		dpone[i] = dpzero[i - 1];
 		i++;
 	}
-	dp[1] = arr[1];
-	dp[2] = arr[1] + arr[2];
-	i = 3;
-	while (i &lt;= N){
-		dp[i] = max(dp[i - 3] + arr[i] + arr[i - 1], dp[i - 2] + arr[i]);
-		dp[i] = max(dp[i - 1], dp[i]);
-		i++;
-	}
-	cout &lt;&lt; dp[N];
-}
+	cout &lt;&lt; dpzero[N] + dpone[N];
+	return 0;
 </code></pre>
 
 
@@ -198,17 +189,12 @@ int	main(){
 
  <div class="pagination">
   
-    <a class="pagination__item" href="https://parkjoungwan.github.io/blog/nojam1912/">
+    <a class="pagination__item" href="https://parkjoungwan.github.io/blog/nojam2156/">
         <span class="pagination__label">Previous Post</span>
-        <span class="pagination__title">[Algorithm, C&#43;&#43;] 백준 1912 : 연속합</span>
+        <span class="pagination__title">[Algorithm, C&#43;&#43;] 백준 2156 : 포도주 시식</span>
     </a>
   
 
-  
-    <a class="pagination__item" href="https://parkjoungwan.github.io/blog/nojam2193/">
-      <span class="pagination__label">Next Post</span>
-      <span class="pagination__title" >[Algorithm, C&#43;&#43;] 백준 2193 : 이친수</span>
-    </a>
   
 </div>
 
