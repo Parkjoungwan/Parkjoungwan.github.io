@@ -2,7 +2,7 @@
 <html lang="en-us">
 
 <head>
-  <title>[Algorithm, C&#43;&#43;] 백준 2193 : 이친수 | kkeujeogblog</title>
+  <title>[Algorithm, C&#43;&#43;] 백준 6359 : 만취한 상범 | kkeujeogblog</title>
 
   <meta charset="UTF-8">
   <meta name="language" content="en">
@@ -49,8 +49,8 @@
             "@id": "https:\/\/parkjoungwan.github.io"
       },
       "articleSection" : "blog",
-      "name" : "[Algorithm, C\u002b\u002b] 백준 2193 : 이친수",
-      "headline" : "[Algorithm, C\u002b\u002b] 백준 2193 : 이친수",
+      "name" : "[Algorithm, C\u002b\u002b] 백준 6359 : 만취한 상범",
+      "headline" : "[Algorithm, C\u002b\u002b] 백준 6359 : 만취한 상범",
       "description" : "",
       "inLanguage" : "en-US",
       "author" : "",
@@ -59,10 +59,10 @@
       "accountablePerson" : "",
       "copyrightHolder" : "",
       "copyrightYear" : "2021",
-      "datePublished": "2021-03-17 16:51:45 \u002b0900 KST",
-      "dateModified" : "2021-03-17 16:51:45 \u002b0900 KST",
-      "url" : "https:\/\/parkjoungwan.github.io\/blog\/nojam2193\/",
-      "wordCount" : "176",
+      "datePublished": "2021-03-17 16:59:05 \u002b0900 KST",
+      "dateModified" : "2021-03-17 16:59:05 \u002b0900 KST",
+      "url" : "https:\/\/parkjoungwan.github.io\/blog\/nojam6359\/",
+      "wordCount" : "156",
       "keywords" : ["Blog"]
     }
   
@@ -115,36 +115,33 @@ if (!doNotTrack) {
       <div class="post__container">
         <div class="post">
           <header class="post__header">
-            <h1 id="post__title">[Algorithm, C&#43;&#43;] 백준 2193 : 이친수</h1>
-            <time datetime="2021-03-17 16:51:45 &#43;0900 KST" class="post__date">2021-03-17</time> 
+            <h1 id="post__title">[Algorithm, C&#43;&#43;] 백준 6359 : 만취한 상범</h1>
+            <time datetime="2021-03-17 16:59:05 &#43;0900 KST" class="post__date">2021-03-17</time> 
           </header>
           <article class="post__content">
               
 <h1 id="문제">문제</h1>
-<p>간략하게 나타내면 다음과 같다.</p>
-<p>이친수란, 다음의 규칙을 만족하는 이진수이다.</p>
-<ol>
-<li>이친수는 0으로 시작하지 않는다.</li>
-<li>이친수는 1이 연속 두번으로 올 수 없다.</li>
-</ol>
-<p>입력값 N이 주어졌을때, N자리 수의 이친수 개수를 구하자.</p>
+<p>테스트 케이스 T, 정수 N을 입력받는다.</p>
+<p>N개의 감옥은 모두 잠겨있다.</p>
+<p>그리고 1부터 N이 될 때까지 1씩 증가하며,</p>
+<p>해당 값의 곱셈 값의 감옥문을 잠겼으면 열고 열렸으면 잠근다.</p>
+<p>열려있는 감옥의 수를 구하라.</p>
 <h1 id="예제">예제</h1>
-<pre><code class="language-cpp">3
+<pre><code class="language-cpp">2
+5
+100
 </code></pre>
 <h1 id="출력">출력</h1>
 <pre><code class="language-cpp">2
+10
 </code></pre>
 <h1 id="풀이">풀이</h1>
-<p>이 문제도 이전과 같은 DP 다이나믹 프로그래밍 문제이다.</p>
-<p>내가 사용한 해법은 요약하면 다음과 같다.</p>
-<p><strong>&ldquo;마지막 숫자가 0으로 끝나는 이친수는 0과 1을 붙일 수 있고, 마지막 숫자가 1로 끝나는 이친수는 0을 붙일 수 있다.&quot;</strong></p>
-<p>점화식으로 나타내면 다음과 같다.</p>
-<pre><code class="language-cpp">dpzero[i] = dpzero[i - 1] + dpone[i - 1];
-dpone[i] = dpzero[i- 1];
-dp[i] = dpzero + dpone;
-dpzero + dpone 은 이친수의 개수
-</code></pre>
-<p>단, 이 문제는 90까지의 경우를 생각하고 INT값을 초과하는 값을 가질 수도 있기 때문에 변수 자료형에 신경써줘야한다.</p>
+<p>단순 구현문제로 볼 수 있는 문제다.</p>
+<p>모든 감옥을 배열로 구현하고 위에서 시키는대로 열고 닫아도 시간 초과가 나지않는 걸로 보인다.</p>
+<p>구현하다가 알게된 해법은 다음과 같다.</p>
+<p><strong>&ldquo;N과 같거나 작은 제곱수의 감옥의 문이 열려있다.&quot;</strong></p>
+<p>1부터 증가하면 곱셈의 문을 열거나 닫게되면 각 값의 공배수들은 닫히거나 열리거나를 짝수번 반복하게 된다.</p>
+<p>그런데 제곱수는 홀수번 반복하게되어,  열려있게 된다.</p>
 <h1 id="코드">코드</h1>
 <pre><code class="language-cpp">#include &lt;iostream&gt;
 
@@ -152,25 +149,31 @@ using namespace std;
 
 int main()
 {
+	int T;
 	int N;
 	int i;
-	long long dpzero[91];
-	long long dpone[91];
+	int j;
+	int result;
 
-	cin &gt;&gt; N;
-	dpzero[0] = 0;
-	dpone[0] = 0;
-	dpzero[1] = 0;
-	dpone[1] = 1;
-	i = 2;
-	while (i &lt;= N)
+	cin &gt;&gt; T;
+	i = 1;
+	while (i &lt;= T)
 	{
-		dpzero[i] = dpzero[i - 1] + dpone[i - 1];
-		dpone[i] = dpzero[i - 1];
+		cin &gt;&gt; N;
+		j = 1;
+		while (j &lt;= N)
+		{
+			if (j * j &lt;= N)
+				result++;
+			j++;
+		}
+		j = 0;
+		cout &lt;&lt; result &lt;&lt; '\n';
+		result = 0;
 		i++;
 	}
-	cout &lt;&lt; dpzero[N] + dpone[N];
 	return 0;
+}
 </code></pre>
 
 
@@ -189,17 +192,12 @@ int main()
 
  <div class="pagination">
   
-    <a class="pagination__item" href="https://parkjoungwan.github.io/blog/nojam2156/">
+    <a class="pagination__item" href="https://parkjoungwan.github.io/blog/nojam2193/">
         <span class="pagination__label">Previous Post</span>
-        <span class="pagination__title">[Algorithm, C&#43;&#43;] 백준 2156 : 포도주 시식</span>
+        <span class="pagination__title">[Algorithm, C&#43;&#43;] 백준 2193 : 이친수</span>
     </a>
   
 
-  
-    <a class="pagination__item" href="https://parkjoungwan.github.io/blog/nojam6359/">
-      <span class="pagination__label">Next Post</span>
-      <span class="pagination__title" >[Algorithm, C&#43;&#43;] 백준 6359 : 만취한 상범</span>
-    </a>
   
 </div>
 
