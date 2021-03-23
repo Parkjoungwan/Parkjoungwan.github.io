@@ -2,7 +2,7 @@
 <html lang="en-us">
 
 <head>
-  <title>[Algorithm, C&#43;&#43;] 백준 6359 : 만취한 상범 | kkeujeogblog</title>
+  <title>[Algorithm, C&#43;&#43;]백준 | kkeujeogblog</title>
 
   <meta charset="UTF-8">
   <meta name="language" content="en">
@@ -49,8 +49,8 @@
             "@id": "https:\/\/parkjoungwan.github.io"
       },
       "articleSection" : "blog",
-      "name" : "[Algorithm, C\u002b\u002b] 백준 6359 : 만취한 상범",
-      "headline" : "[Algorithm, C\u002b\u002b] 백준 6359 : 만취한 상범",
+      "name" : "[Algorithm, C\u002b\u002b]백준",
+      "headline" : "[Algorithm, C\u002b\u002b]백준",
       "description" : "",
       "inLanguage" : "en-US",
       "author" : "",
@@ -59,10 +59,10 @@
       "accountablePerson" : "",
       "copyrightHolder" : "",
       "copyrightYear" : "2021",
-      "datePublished": "2021-03-17 16:59:05 \u002b0900 KST",
-      "dateModified" : "2021-03-17 16:59:05 \u002b0900 KST",
-      "url" : "https:\/\/parkjoungwan.github.io\/blog\/nojam6359\/",
-      "wordCount" : "156",
+      "datePublished": "2021-03-23 14:42:45 \u002b0900 KST",
+      "dateModified" : "2021-03-23 14:42:45 \u002b0900 KST",
+      "url" : "https:\/\/parkjoungwan.github.io\/blog\/nojam10815\/",
+      "wordCount" : "285",
       "keywords" : ["Blog"]
     }
   
@@ -115,64 +115,105 @@ if (!doNotTrack) {
       <div class="post__container">
         <div class="post">
           <header class="post__header">
-            <h1 id="post__title">[Algorithm, C&#43;&#43;] 백준 6359 : 만취한 상범</h1>
-            <time datetime="2021-03-17 16:59:05 &#43;0900 KST" class="post__date">2021-03-17</time> 
+            <h1 id="post__title">[Algorithm, C&#43;&#43;]백준</h1>
+            <time datetime="2021-03-23 14:42:45 &#43;0900 KST" class="post__date">2021-03-23</time> 
           </header>
           <article class="post__content">
               
 <h1 id="문제">문제</h1>
-<p>테스트 케이스 T, 정수 N을 입력받는다.</p>
-<p>N개의 감옥은 모두 잠겨있다.</p>
-<p>그리고 1부터 N이 될 때까지 1씩 증가하며,</p>
-<p>해당 값의 곱셈 값의 감옥문을 잠겼으면 열고 열렸으면 잠근다.</p>
-<p>열려있는 감옥의 수를 구하라.</p>
+<p>숫자 카드는 정수 하나가 적혀져 있는 카드이다. 상근이는 숫자 카드 N개를 가지고 있다. 정수 M개가 주어졌을 때, 이 수가 적혀있는 숫자 카드를 상근이가 가지고 있는지 아닌지를 구하는 프로그램을 작성하시오.</p>
 <h1 id="예제">예제</h1>
-<pre><code class="language-cpp">2
-5
-100
+<pre><code class="language-cpp">5
+6 3 2 10 -10
+8
+10 9 -5 2 3 4 5 -10
 </code></pre>
 <h1 id="출력">출력</h1>
-<pre><code class="language-cpp">2
-10
+<pre><code class="language-cpp">1 0 0 1 1 0 0 1
 </code></pre>
 <h1 id="풀이">풀이</h1>
-<p>단순 구현문제로 볼 수 있는 문제다.</p>
-<p>모든 감옥을 배열로 구현하고 위에서 시키는대로 열고 닫아도 시간 초과가 나지않는 걸로 보인다.</p>
-<p>구현하다가 알게된 해법은 다음과 같다.</p>
-<p><strong>&ldquo;N과 같거나 작은 제곱수의 감옥의 문이 열려있다.&quot;</strong></p>
-<p>1부터 증가하면 곱셈의 문을 열거나 닫게되면 각 값의 공배수들은 닫히거나 열리거나를 짝수번 반복하게 된다.</p>
-<p>그런데 제곱수는 홀수번 반복하게되어,  열려있게 된다.</p>
+<p>이진탐색 문제이다. M개의 숫자가 N개의 카드 풀안에 존재하는지 찾는 방법을 이진탐색을 이용한다. 이진탐색의 핵심은</p>
+<p><strong>&ldquo;정렬된 숫자 배열에서 특정 숫자를 찾을 때, 배열의 중간에서 크고 작음을 판단해 탐색해야될 크기를 반으로 줄여나가는 것이다.&quot;</strong></p>
 <h1 id="코드">코드</h1>
 <pre><code class="language-cpp">#include &lt;iostream&gt;
+#include &lt;algorithm&gt;
+#include &lt;vector&gt;
 
 using namespace std;
 
-int main()
+void fd_check(int *sang, int *nosang, int N, int M)
 {
-	int T;
-	int N;
 	int i;
-	int j;
-	int result;
+	int check;
+	int end;
+	int start;
+	int mid;
+	int target;
 
-	cin &gt;&gt; T;
-	i = 1;
-	while (i &lt;= T)
+	i = 0;
+	while (i &lt; M)
 	{
-		cin &gt;&gt; N;
-		j = 1;
-		while (j &lt;= N)
+		target = nosang[i];
+		check = 0;
+		end = N - 1;
+		start = 0;
+		mid = (end - start) / 2;
+		while (end - start &gt;= 0)
 		{
-			if (j * j &lt;= N)
-				result++;
-			j++;
+			if (sang[mid] == target)
+			{
+				nosang[i] = 1;
+				check = 1;
+				break;
+			}
+			else if (sang[mid] &lt;= target)
+			{
+				start = mid + 1;
+			}
+			else
+				end = mid - 1;
+			mid = (end + start) / 2;
 		}
-		j = 0;
-		cout &lt;&lt; result &lt;&lt; '\n';
-		result = 0;
+		if (check != 1)
+		{
+			nosang[i] = 0;
+		}
 		i++;
 	}
-	return 0;
+}
+
+int	main()
+{
+	int N;
+	int M;
+	int i;
+	int *sang;
+	int *nosang;
+
+	cin &gt;&gt; N;
+	i = 0;
+	sang = new int[N];
+	while (i &lt; N)
+	{
+		cin &gt;&gt; sang[i];
+		i++;
+	}
+	sort(sang, sang + N);
+	i = 0;
+	cin &gt;&gt; M;
+	nosang = new int[M];
+	while (i &lt; M)
+	{
+		cin &gt;&gt; nosang[i];
+		i++;
+	}
+	fd_check (sang, nosang, N, M);
+	i = 0;
+	while (i &lt; M)
+	{
+		cout &lt;&lt; nosang[i] &lt;&lt; &quot; &quot;;
+		i++;
+	}
 }
 </code></pre>
 
@@ -192,17 +233,12 @@ int main()
 
  <div class="pagination">
   
-    <a class="pagination__item" href="https://parkjoungwan.github.io/blog/nojam2193/">
+    <a class="pagination__item" href="https://parkjoungwan.github.io/blog/nojam6359/">
         <span class="pagination__label">Previous Post</span>
-        <span class="pagination__title">[Algorithm, C&#43;&#43;] 백준 2193 : 이친수</span>
+        <span class="pagination__title">[Algorithm, C&#43;&#43;] 백준 6359 : 만취한 상범</span>
     </a>
   
 
-  
-    <a class="pagination__item" href="https://parkjoungwan.github.io/blog/nojam10815/">
-      <span class="pagination__label">Next Post</span>
-      <span class="pagination__title" >[Algorithm, C&#43;&#43;]백준</span>
-    </a>
   
 </div>
 
