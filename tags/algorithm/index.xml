@@ -7,7 +7,17 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>© {year}</copyright>
-    <lastBuildDate>Tue, 23 Mar 2021 14:42:45 +0900</lastBuildDate><atom:link href="https://parkjoungwan.github.io/tags/algorithm/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 23 Mar 2021 21:00:00 +0900</lastBuildDate><atom:link href="https://parkjoungwan.github.io/tags/algorithm/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>[Algorithm, C&#43;&#43;] 백준 10816 : 숫자 카드 2</title>
+      <link>https://parkjoungwan.github.io/blog/nojam10816/</link>
+      <pubDate>Tue, 23 Mar 2021 21:00:00 +0900</pubDate>
+      
+      <guid>https://parkjoungwan.github.io/blog/nojam10816/</guid>
+      <description>문제 숫자 카드는 정수 하나가 적혀져 있는 카드이다. 상근이는 숫자 카드 N개를 가지고 있다. 정수 M개가 주어졌을 때, 이 수가 적혀있는 숫자 카드를 상근이가 몇 개 가지고 있는지 구하는 프로그램을 작성하시오.
+예제 10 6 3 2 10 10 10 -10 -10 7 3 8 10 9 -5 2 3 4 5 -10  출력 3 0 0 1 2 0 0 2  풀이 이진탐색 문제이다. M개의 숫자가 N개의 카드 풀안에 존재하는지 찾는 방법을 이진탐색을 이용한다.</description>
+    </item>
+    
     <item>
       <title>[Algorithm, C&#43;&#43;] 백준 10815 : 숫자 카드</title>
       <link>https://parkjoungwan.github.io/blog/nojam10815/</link>
