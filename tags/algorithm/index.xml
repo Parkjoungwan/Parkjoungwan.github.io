@@ -7,7 +7,19 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>© {year}</copyright>
-    <lastBuildDate>Tue, 23 Mar 2021 21:00:00 +0900</lastBuildDate><atom:link href="https://parkjoungwan.github.io/tags/algorithm/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 24 Mar 2021 17:58:20 +0900</lastBuildDate><atom:link href="https://parkjoungwan.github.io/tags/algorithm/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>[Algorithm, C&#43;&#43;] 백준 1300 : k번째 수</title>
+      <link>https://parkjoungwan.github.io/blog/nojam1300/</link>
+      <pubDate>Wed, 24 Mar 2021 17:58:20 +0900</pubDate>
+      
+      <guid>https://parkjoungwan.github.io/blog/nojam1300/</guid>
+      <description>문제 세준이는 크기가 N×N인 배열 A를 만들었다. 배열에 들어있는 수 A[i][j] = i×j 이다. 이 수를 일차원 배열 B에 넣으면 B의 크기는 N×N이 된다. B를 오름차순 정렬했을 때, B[k]를 구해보자.
+배열 A와 B의 인덱스는 1부터 시작한다.
+예제 3 7  출력 6  풀이 문제에서 나오는 배열을 만들었다가는 메모리 초과로 실패를 겪게 된다. 이진탐색을 사용해야 하는데, 막상 이진탐색 문제라는게 분류에 적혀있어도 어떻게 적용해야 할 지 막막하다.
+결론부터 말하면 다음과 같다.</description>
+    </item>
+    
     <item>
       <title>[Algorithm, C&#43;&#43;] 백준 10816 : 숫자 카드 2</title>
       <link>https://parkjoungwan.github.io/blog/nojam10816/</link>
