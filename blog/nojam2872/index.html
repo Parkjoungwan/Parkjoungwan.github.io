@@ -2,7 +2,7 @@
 <html lang="en-us">
 
 <head>
-  <title>[Algorithm, C&#43;&#43;] 백준 2110 : 공유기 설치 | kkeujeogblog</title>
+  <title>[Algorithm, C&#43;&#43;] 백준 2872: 우리집엔 도서관이 있어 | kkeujeogblog</title>
 
   <meta charset="UTF-8">
   <meta name="language" content="en">
@@ -49,8 +49,8 @@
             "@id": "https:\/\/parkjoungwan.github.io"
       },
       "articleSection" : "blog",
-      "name" : "[Algorithm, C\u002b\u002b] 백준 2110 : 공유기 설치",
-      "headline" : "[Algorithm, C\u002b\u002b] 백준 2110 : 공유기 설치",
+      "name" : "[Algorithm, C\u002b\u002b] 백준 2872: 우리집엔 도서관이 있어",
+      "headline" : "[Algorithm, C\u002b\u002b] 백준 2872: 우리집엔 도서관이 있어",
       "description" : "",
       "inLanguage" : "en-US",
       "author" : "",
@@ -59,10 +59,10 @@
       "accountablePerson" : "",
       "copyrightHolder" : "",
       "copyrightYear" : "2021",
-      "datePublished": "2021-03-24 20:20:11 \u002b0900 KST",
-      "dateModified" : "2021-03-24 20:20:11 \u002b0900 KST",
-      "url" : "https:\/\/parkjoungwan.github.io\/blog\/nojam2110\/",
-      "wordCount" : "250",
+      "datePublished": "2021-03-30 22:38:21 \u002b0900 KST",
+      "dateModified" : "2021-03-30 22:38:21 \u002b0900 KST",
+      "url" : "https:\/\/parkjoungwan.github.io\/blog\/nojam2872\/",
+      "wordCount" : "329",
       "keywords" : ["Blog"]
     }
   
@@ -115,88 +115,72 @@ if (!doNotTrack) {
       <div class="post__container">
         <div class="post">
           <header class="post__header">
-            <h1 id="post__title">[Algorithm, C&#43;&#43;] 백준 2110 : 공유기 설치</h1>
-            <time datetime="2021-03-24 20:20:11 &#43;0900 KST" class="post__date">2021-03-24</time> 
+            <h1 id="post__title">[Algorithm, C&#43;&#43;] 백준 2872: 우리집엔 도서관이 있어</h1>
+            <time datetime="2021-03-30 22:38:21 &#43;0900 KST" class="post__date">2021-03-30</time> 
           </header>
           <article class="post__content">
               
 <h1 id="문제">문제</h1>
-<p>도현이의 집 N개가 수직선 위에 있다. 각각의 집의 좌표는 x1, &hellip;, xN이고, 집 여러개가 같은 좌표를 가지는 일은 없다.</p>
-<p>도현이는 언제 어디서나 와이파이를 즐기기 위해서 집에 공유기 C개를 설치하려고 한다. 최대한 많은 곳에서 와이파이를 사용하려고 하기 때문에, 한 집에는 공유기를 하나만 설치할 수 있고, 가장 인접한 두 공유기 사이의 거리를 가능한 크게 하여 설치하려고 한다.</p>
-<p>C개의 공유기를 N개의 집에 적당히 설치해서, 가장 인접한 두 공유기 사이의 거리를 최대로 하는 프로그램을 작성하시오.</p>
+<p>상근이는 컴퓨터 공학의 일인자가 되기 위해 책을 매우 많이 구매했다. 하지만, 집에 책장이 없어서 책을 탑처럼 쌓아놓고 있다.</p>
+<p>오늘은 오랜만에 상근이가 집에서 휴식을 취하는 날이다. 상근이는 책을 알파벳 순서대로 정렬하려고 한다. 사전 순으로 가장 앞서는 책은 가장 위에 놓고, 가장 뒤에 있는 책은 가장 밑에 놓아야 한다. 책을 정렬할 때 사용할 수 있는 방법은 책 하나를 뺀 다음, 가장 위에 놓는 것이다.</p>
+<p>책은 1부터 N까지 번호가 책 이름의 사전 순으로 매겨져 있다. 1은 사전 순으로 가장 앞서는 책이다. 따라서, 위에서부터 책의 번호를 읽으면 (1, 2, &hellip;, N)이 되어야 한다. 예를 들어, 책이 3권있고 처음에 (3, 2, 1)로 쌓여있을 때, 2번 만에 사전순으로 책을 쌓을 수 있다. 가장 먼저, 2번 책을 뺀 다음에 가장 위에 놓는다. 그렇게 되면 (2, 3, 1)이 된다. 마지막으로, 1을 뺀 다음 가장 위에 놓으면 (1, 2, 3)이 된다.</p>
+<p>현재 책이 어떻게 쌓여있는지가 주어졌을 때, 몇 번만에 사전 순으로 쌓을 수 있는지 구하는 프로그램을 작성하시오.</p>
 <h1 id="예제">예제</h1>
-<pre><code class="language-cpp">5 3
-1
+<pre><code class="language-cpp">3
+3
 2
-8
-4
-9
+1
 </code></pre>
 <h1 id="출력">출력</h1>
-<pre><code class="language-cpp">3
+<pre><code class="language-cpp">2
 </code></pre>
 <h1 id="풀이">풀이</h1>
-<p>이진탐색 문제이다.</p>
-<p>풀이 방법은 다음과 같다.</p>
-<p>&ldquo;특정 간격을 기준으로 공유기가 설치됐을 때, 공유기를 모두 설치했는가 아닌가, 더 설치해야된다면 거리를 줄이고 공유기 수를 줄여야한다면 거리를 늘린다.&rdquo;</p>
+<p>그리디 알고리즘 분류 문제이다.</p>
+<p>내가 사용한 풀이는 다음과 같다.</p>
+<p>&ldquo;입력 받은 배열을 뒤에서 부터 순회하면서  입력받은 N값과 배열에 든 수를 비교해서 같은 수를 찾으면 N을 하나씩 감소시켜 갯수를 센다. 그 갯수를 N에서 빼서 출력한다.&rdquo;</p>
+<p>입력받은 수들을 정렬하는데 있어서 움직일 필요가 있는 수가 있고 움직일 필요가 없는 수도 있다.</p>
+<p>뒤에서 부터 입력 받은 N과 같은 수는 움직일 필요가 없는 수 이다.</p>
+<h3 id="예시">예시<a class="anchor" href="#예시">#</a></h3>
+<pre><code class="language-cpp">5
+4
+3
+2
+5
+1
+</code></pre>
+<p>다음과 같이 입력이 주어지면, 4와 5는 움직일 필요가 없다. 움직일 필요가 있는 수는 1, 2, 3이다.</p>
+<p>3을 위로, 2를 위로, 1을 위로 하게 되면 정렬이 완료된다.</p>
+<p>따라서 움직일 필요가 없는 수의 갯수인 2개를 전체 배열에서 뺀 3이 출려되야하는 수이다.</p>
 <h1 id="코드">코드</h1>
 <pre><code class="language-cpp">#include &lt;iostream&gt;
-#include &lt;algorithm&gt;
 using namespace std;
+int stack[300001];
 
 int main()
 {
 	int N;
-	int C;
 	int i;
-	int *arr;
+	int j;
+	int count;
+	int last;
 
 	cin &gt;&gt; N;
-	cin &gt;&gt; C;
-	arr = new int[N];
 	i = 0;
+	j = N - 1;
+	last = N;
+	count = 0;
 	while (i &lt; N)
+		cin &gt;&gt; stack[i++];
+	while (j &gt;= 0)
 	{
-		cin &gt;&gt; arr[i];
-		i++;
+		if (stack[j] == last)
+		{
+			count++;
+			last--;
+		}
+		j--;
 	}
-	sort(arr, arr + N);
-
-	int start, end, mid;
-	int d;
-	int ans, count, target;
-
-	start = 1;
-	end = arr[N - 1] - arr[0];
-	d = 0;
-	count = 1;
-	while (start &lt;= end)
-	{
-		i = 1;
-		mid = (start + end) / 2;
-		count = 1;
-		target = arr[0];
-		while (i &lt; N)
-		{
-			d = arr[i] - target;
-			if (mid &lt;= d)
-			{
-				count++;
-				target = arr[i];
-			}
-			i++;
-		}
-		if (count &gt;= C)
-		{
-			ans = mid;
-			start = mid + 1;
-		}
-		else
-		{
-			end = mid - 1;
-		}
-	}
-	cout &lt;&lt; ans;
+	cout &lt;&lt; N - count;
 }
 </code></pre>
 
@@ -216,17 +200,12 @@ int main()
 
  <div class="pagination">
   
-    <a class="pagination__item" href="https://parkjoungwan.github.io/blog/nojam1325/">
+    <a class="pagination__item" href="https://parkjoungwan.github.io/blog/nojam2110/">
         <span class="pagination__label">Previous Post</span>
-        <span class="pagination__title">[Algorithm, C&#43;&#43;] 백준 1325 : 효율적인 해킹</span>
+        <span class="pagination__title">[Algorithm, C&#43;&#43;] 백준 2110 : 공유기 설치</span>
     </a>
   
 
-  
-    <a class="pagination__item" href="https://parkjoungwan.github.io/blog/nojam2872/">
-      <span class="pagination__label">Next Post</span>
-      <span class="pagination__title" >[Algorithm, C&#43;&#43;] 백준 2872: 우리집엔 도서관이 있어</span>
-    </a>
   
 </div>
 

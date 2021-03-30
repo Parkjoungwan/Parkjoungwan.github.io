@@ -7,7 +7,18 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>© {year}</copyright>
-    <lastBuildDate>Wed, 24 Mar 2021 20:20:11 +0900</lastBuildDate><atom:link href="https://parkjoungwan.github.io/tags/c++/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 30 Mar 2021 22:38:21 +0900</lastBuildDate><atom:link href="https://parkjoungwan.github.io/tags/c++/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>[Algorithm, C&#43;&#43;] 백준 2872: 우리집엔 도서관이 있어</title>
+      <link>https://parkjoungwan.github.io/blog/nojam2872/</link>
+      <pubDate>Tue, 30 Mar 2021 22:38:21 +0900</pubDate>
+      
+      <guid>https://parkjoungwan.github.io/blog/nojam2872/</guid>
+      <description>문제 상근이는 컴퓨터 공학의 일인자가 되기 위해 책을 매우 많이 구매했다. 하지만, 집에 책장이 없어서 책을 탑처럼 쌓아놓고 있다.
+오늘은 오랜만에 상근이가 집에서 휴식을 취하는 날이다. 상근이는 책을 알파벳 순서대로 정렬하려고 한다. 사전 순으로 가장 앞서는 책은 가장 위에 놓고, 가장 뒤에 있는 책은 가장 밑에 놓아야 한다. 책을 정렬할 때 사용할 수 있는 방법은 책 하나를 뺀 다음, 가장 위에 놓는 것이다.
+책은 1부터 N까지 번호가 책 이름의 사전 순으로 매겨져 있다.</description>
+    </item>
+    
     <item>
       <title>[Algorithm, C&#43;&#43;] 백준 2110 : 공유기 설치</title>
       <link>https://parkjoungwan.github.io/blog/nojam2110/</link>
