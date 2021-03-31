@@ -7,7 +7,16 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>© {year}</copyright>
-    <lastBuildDate>Tue, 30 Mar 2021 22:38:21 +0900</lastBuildDate><atom:link href="https://parkjoungwan.github.io/blog/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 31 Mar 2021 18:24:59 +0900</lastBuildDate><atom:link href="https://parkjoungwan.github.io/blog/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>[Algorithm, C&#43;&#43;] 백준 2858: 경비행기</title>
+      <link>https://parkjoungwan.github.io/blog/nojam2858/</link>
+      <pubDate>Wed, 31 Mar 2021 18:24:59 +0900</pubDate>
+      
+      <guid>https://parkjoungwan.github.io/blog/nojam2858/</guid>
+      <description>문제 경비행기 독수리호가 출발지 S에서 목적지 T로 가능한 빠른 속도로 안전하게 이동하고자 한다. 이때, 경비행기의 연료통의 크기를 정하는 것이 중요한 문제가 된다. 큰 연료통을 장착하면 중간에 내려서 급유를 받는 횟수가 적은 장점이 있지만 연료통의 무게로 인하여 속도가 느려지고, 안정성에도 문제가 있을 수 있다. 한편 작은 연료통을 장착하면 비행기의 속도가 빨라지는 장점이 있지만 중간에 내려서 급유를 받아야 하는 횟수가 많아지는 단점이 있다. 문제는 중간에 내려서 급유를 받는 횟수가 k이하 일 때 연료통의 최소용량을 구하는 것이다.</description>
+    </item>
+    
     <item>
       <title>[Algorithm, C&#43;&#43;] 백준 2872: 우리집엔 도서관이 있어</title>
       <link>https://parkjoungwan.github.io/blog/nojam2872/</link>
