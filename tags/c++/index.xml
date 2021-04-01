@@ -7,7 +7,18 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>© {year}</copyright>
-    <lastBuildDate>Wed, 31 Mar 2021 18:24:59 +0900</lastBuildDate><atom:link href="https://parkjoungwan.github.io/tags/c++/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 01 Apr 2021 21:58:54 +0900</lastBuildDate><atom:link href="https://parkjoungwan.github.io/tags/c++/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>[Algorithm, C&#43;&#43;] 백준 9202: Boggle</title>
+      <link>https://parkjoungwan.github.io/blog/nojam9202/</link>
+      <pubDate>Thu, 01 Apr 2021 21:58:54 +0900</pubDate>
+      
+      <guid>https://parkjoungwan.github.io/blog/nojam9202/</guid>
+      <description>문제 상근이는 보드 게임 &amp;ldquo;Boggle&amp;quot;을 엄청나게 좋아한다. Boggle은 글자가 쓰여 있는 주사위로 이루어진 4×4 크기의 그리드에서 최대한 많은 단어를 찾는 게임이다.
+상근이는 한 번도 부인을 Boggle로 이겨본 적이 없다. 이렇게 질 때마다 상근이는 쓰레기 버리기, 설거지와 같은 일을 해야 한다. 이제 상근이는 프로그램을 작성해서 부인을 이겨보려고 한다.
+Boggle에서 단어는 인접한 글자(가로, 세로, 대각선)를 이용해서 만들 수 있다. 하지만, 한 주사위는 단어에 한 번만 사용할 수 있다. 단어는 게임 사전에 등재되어 있는 단어만 올바른 단어이다.</description>
+    </item>
+    
     <item>
       <title>[Algorithm, C&#43;&#43;] 백준 2858: 경비행기</title>
       <link>https://parkjoungwan.github.io/blog/nojam2858/</link>
