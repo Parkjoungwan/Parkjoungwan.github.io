@@ -7,7 +7,18 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>© {year}</copyright>
-    <lastBuildDate>Fri, 02 Apr 2021 16:29:50 +0900</lastBuildDate><atom:link href="https://parkjoungwan.github.io/blog/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 07 Apr 2021 16:48:53 +0900</lastBuildDate><atom:link href="https://parkjoungwan.github.io/blog/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>[Algorithm, C&#43;&#43;] 백준 1477: 휴게소 세우기</title>
+      <link>https://parkjoungwan.github.io/blog/nojam1477/</link>
+      <pubDate>Wed, 07 Apr 2021 16:48:53 +0900</pubDate>
+      
+      <guid>https://parkjoungwan.github.io/blog/nojam1477/</guid>
+      <description>문제 다솜이는 유료 고속도로를 가지고 있다. 다솜이는 현재 고속도로에 휴게소를 N개 가지고 있는데, 휴게소의 위치는 고속도로의 시작으로부터 얼만큼 떨어져 있는지로 주어진다. 다솜이는 지금 휴게소를 M개 더 세우려고 한다.
+다솜이는 이미 휴게소가 있는 곳에 휴게소를 또 세울 수 없고, 고속도로의 끝에도 휴게소를 세울 수 없다. 휴게소는 정수 위치에만 세울 수 있다.
+다솜이는 이 고속도로를 이용할 때, 모든 휴게소를 방문한다. 다솜이는 휴게소를 M개 더 지어서 휴게소가 없는 구간의 길이의 최댓값을 최소로 하려고 한다.</description>
+    </item>
+    
     <item>
       <title>[Algorithm, C&#43;&#43;] 백준 11812: K진 트리</title>
       <link>https://parkjoungwan.github.io/blog/nojam11812/</link>
