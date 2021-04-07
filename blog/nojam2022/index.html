@@ -2,7 +2,7 @@
 <html lang="en-us">
 
 <head>
-  <title>[Algorithm, C&#43;&#43;] 백준 1477: 휴게소 세우기 | kkeujeogblog</title>
+  <title>[Algorithm, C&#43;&#43;] 백준 2022: 사다리 | kkeujeogblog</title>
 
   <meta charset="UTF-8">
   <meta name="language" content="en">
@@ -49,8 +49,8 @@
             "@id": "https:\/\/parkjoungwan.github.io"
       },
       "articleSection" : "blog",
-      "name" : "[Algorithm, C\u002b\u002b] 백준 1477: 휴게소 세우기",
-      "headline" : "[Algorithm, C\u002b\u002b] 백준 1477: 휴게소 세우기",
+      "name" : "[Algorithm, C\u002b\u002b] 백준 2022: 사다리",
+      "headline" : "[Algorithm, C\u002b\u002b] 백준 2022: 사다리",
       "description" : "",
       "inLanguage" : "en-US",
       "author" : "",
@@ -59,10 +59,10 @@
       "accountablePerson" : "",
       "copyrightHolder" : "",
       "copyrightYear" : "2021",
-      "datePublished": "2021-04-07 16:48:53 \u002b0900 KST",
-      "dateModified" : "2021-04-07 16:48:53 \u002b0900 KST",
-      "url" : "https:\/\/parkjoungwan.github.io\/blog\/nojam1477\/",
-      "wordCount" : "310",
+      "datePublished": "2021-04-07 17:38:24 \u002b0900 KST",
+      "dateModified" : "2021-04-07 17:38:24 \u002b0900 KST",
+      "url" : "https:\/\/parkjoungwan.github.io\/blog\/nojam2022\/",
+      "wordCount" : "291",
       "keywords" : ["Blog"]
     }
   
@@ -115,77 +115,86 @@ if (!doNotTrack) {
       <div class="post__container">
         <div class="post">
           <header class="post__header">
-            <h1 id="post__title">[Algorithm, C&#43;&#43;] 백준 1477: 휴게소 세우기</h1>
-            <time datetime="2021-04-07 16:48:53 &#43;0900 KST" class="post__date">2021-04-07</time> 
+            <h1 id="post__title">[Algorithm, C&#43;&#43;] 백준 2022: 사다리</h1>
+            <time datetime="2021-04-07 17:38:24 &#43;0900 KST" class="post__date">2021-04-07</time> 
           </header>
           <article class="post__content">
               
 <h1 id="문제">문제</h1>
-<p>다솜이는 유료 고속도로를 가지고 있다. 다솜이는 현재 고속도로에 휴게소를 N개 가지고 있는데, 휴게소의 위치는 고속도로의 시작으로부터 얼만큼 떨어져 있는지로 주어진다. 다솜이는 지금 휴게소를 M개 더 세우려고 한다.</p>
-<p>다솜이는 이미 휴게소가 있는 곳에 휴게소를 또 세울 수 없고, 고속도로의 끝에도 휴게소를 세울 수 없다. 휴게소는 정수 위치에만 세울 수 있다.</p>
-<p>다솜이는 이 고속도로를 이용할 때, 모든 휴게소를 방문한다. 다솜이는 휴게소를 M개 더 지어서 휴게소가 없는 구간의 길이의 최댓값을 최소로 하려고 한다. (반드시 M개를 모두 지어야 한다.)</p>
-<p>예를 들어, 고속도로의 길이가 1000이고, 현재 휴게소가 {200, 701, 800}에 있고, 휴게소를 1개 더 세우려고 한다고 해보자.</p>
-<p>일단, 지금 이 고속도로를 타고 달릴 때, 휴게소가 없는 구간의 최댓값은 200~701구간인 501이다. 하지만, 새로운 휴게소를 451구간에 짓게 되면, 최대가 251이 되어서 최소가 된다.</p>
+<p>아래의 그림과 같이 높은 빌딩 사이를 따라 좁은 길이 나있다. 두 개의 사다리가 있는데 길이가 x인 사다리는 오른쪽 빌딩의 아래를 받침대로 하여 왼쪽 빌딩에 기대져 있고 길이가 y인 사다리는 왼쪽 빌딩의 아래를 받침대로 하여 오른쪽 빌딩에 기대져 있다. 그리고 두 사다리는 땅에서부터 정확하게 c인 지점에서 서로 교차한다. 그렇다면 두 빌딩은 얼마나 떨어져 있는 걸까?</p>
+<p><img src="https://onlinejudgeimages.s3-ap-northeast-1.amazonaws.com/upload/201007/ladd.png" alt="https://onlinejudgeimages.s3-ap-northeast-1.amazonaws.com/upload/201007/ladd.png"></p>
 <h1 id="예제">예제</h1>
-<pre><code class="language-cpp">6 7 800
-622 411 201 555 755 82
+<pre><code class="language-cpp">30 40 10
 </code></pre>
 <h1 id="출력">출력</h1>
-<pre><code class="language-cpp">70
+<pre><code class="language-cpp">26.033
 </code></pre>
 <h1 id="풀이">풀이</h1>
-<p>&ldquo;우리가 찾는건 최대값의 최소인 경우이다.&rdquo;</p>
-<p>말 그대로, 최대가 아닌 값들에 대해서 신경 쓸 필요가 없다.</p>
-<p>따라서, mid를 우리가 찾는 최대라고 가정하고 각 휴게소의 거리를 나눠보면서 우리가 입력값으로 받아온 m과 일치하는지 확인하면서 이분탐색을 실시한다.</p>
-<p>이 과정으로 start가 end보다 커질 때 까지 반복하면, start가 우리가 찾는 가장 작은 최대값이 된다.</p>
+<p>&ldquo;주어진 값들로 수식을 세워야 한다.&rdquo;</p>
+<p>찾아야 하는 아래쪽, 두 집 사이의 거리 w</p>
+<p>첫번째 집에 걸쳐져 있는 사다리의 높이 h1</p>
+<p>두번째 집에 걸쳐져 있는 사다리의 높이 h2</p>
+<p>두 사다리의 교점에서 수직으로 내린 길이 c
+두 사다리의 교점에서 수직으로 내렸을 때 나눠지는 두 길이 w_1, w_2</p>
+<p>수식을 세웠다면, 0부터 x와 y값 중 작은 값을 기준으로 이분탐색으로 w를 찾아나가면 된다.</p>
+<pre><code class="language-markdown">w = w_1 + w_2
+
+h1 / w = c / w_2
+
+w_2 = cw / h1
+
+h2 / w = c / w_1
+
+w_1 = cw / h2
+
+w = w * c / h2 + w * c /  h1
+
+1 = c (h1 + h2) / (h1 * h2)
+
+&quot;c = (h1 + h2) / (h1 * h2)&quot;
+</code></pre>
 <h1 id="코드">코드</h1>
 <pre><code class="language-cpp">#include &lt;iostream&gt;
 #include &lt;algorithm&gt;
 #include &lt;vector&gt;
-#include &lt;string.h&gt;
+#include &lt;cmath&gt;
+
 using namespace std;
+
+double x, y, c;
+
+double fd_width(double mid)
+{
+	double h1 = sqrt(x * x - mid * mid);
+	double h2 = sqrt(y * y - mid * mid);
+	return (h1 * h2)/(h1 + h2);
+}
 
 int main()
 {
-	int n, m, l;
-	int pos;
-	int i;
-	int start, end, mid;
+	ios::sync_with_stdio(false);
+	cin.tie(NULL);
+	cout.tie(NULL);
 
-	cin &gt;&gt; n &gt;&gt; m &gt;&gt; l;
-	vector&lt;int&gt;store;
-	store.push_back(0);
-	i = 0;
-	while (i &lt; n)
+	cin &gt;&gt; x &gt;&gt; y &gt;&gt; c;
+	double start, end, mid;
+	double result;
+
+	start = 0;
+	end = min(x, y);
+
+	while (end - start &gt; 0.000001 )
 	{
-		cin &gt;&gt; pos;
-		store.push_back(pos);
-		i++;
-	}
-	store.push_back(l);
-	sort(store.begin(), store.end());
-	start = 1;
-	end = l - 1;
-	mid = 0;
-	while (start &lt;= end)
-	{
-		mid = (start + end) / 2;
-		int new_store = 0;
-		i = 1;
-		while (i &lt; store.size())
+		mid = (start + end) / 2.0;
+		if (fd_width(mid) &gt;= c)
 		{
-			int dist = store[i] - store[i - 1];
-			new_store += (dist / mid);
-			if (dist % mid == 0)
-				new_store--;
-			i++;
+			result = mid;
+			start = mid;
 		}
-		if (new_store &gt; m)
-			start = mid + 1;
 		else
-			end = mid - 1;
+			end = mid;
 	}
-	cout &lt;&lt; start;
+	printf(&quot;%.3lf\n&quot;, result);
 	return 0;
 }
 </code></pre>
@@ -206,17 +215,12 @@ int main()
 
  <div class="pagination">
   
-    <a class="pagination__item" href="https://parkjoungwan.github.io/blog/nojam11812/">
+    <a class="pagination__item" href="https://parkjoungwan.github.io/blog/nojam1477/">
         <span class="pagination__label">Previous Post</span>
-        <span class="pagination__title">[Algorithm, C&#43;&#43;] 백준 11812: K진 트리</span>
+        <span class="pagination__title">[Algorithm, C&#43;&#43;] 백준 1477: 휴게소 세우기</span>
     </a>
   
 
-  
-    <a class="pagination__item" href="https://parkjoungwan.github.io/blog/nojam2022/">
-      <span class="pagination__label">Next Post</span>
-      <span class="pagination__title" >[Algorithm, C&#43;&#43;] 백준 2022: 사다리</span>
-    </a>
   
 </div>
 

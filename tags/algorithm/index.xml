@@ -7,7 +7,18 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>© {year}</copyright>
-    <lastBuildDate>Wed, 07 Apr 2021 16:48:53 +0900</lastBuildDate><atom:link href="https://parkjoungwan.github.io/tags/algorithm/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 07 Apr 2021 17:38:24 +0900</lastBuildDate><atom:link href="https://parkjoungwan.github.io/tags/algorithm/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>[Algorithm, C&#43;&#43;] 백준 2022: 사다리</title>
+      <link>https://parkjoungwan.github.io/blog/nojam2022/</link>
+      <pubDate>Wed, 07 Apr 2021 17:38:24 +0900</pubDate>
+      
+      <guid>https://parkjoungwan.github.io/blog/nojam2022/</guid>
+      <description>문제 아래의 그림과 같이 높은 빌딩 사이를 따라 좁은 길이 나있다. 두 개의 사다리가 있는데 길이가 x인 사다리는 오른쪽 빌딩의 아래를 받침대로 하여 왼쪽 빌딩에 기대져 있고 길이가 y인 사다리는 왼쪽 빌딩의 아래를 받침대로 하여 오른쪽 빌딩에 기대져 있다. 그리고 두 사다리는 땅에서부터 정확하게 c인 지점에서 서로 교차한다. 그렇다면 두 빌딩은 얼마나 떨어져 있는 걸까?
+예제 30 40 10  출력 26.033  풀이 &amp;ldquo;주어진 값들로 수식을 세워야 한다.&amp;rdquo;
+찾아야 하는 아래쪽, 두 집 사이의 거리 w</description>
+    </item>
+    
     <item>
       <title>[Algorithm, C&#43;&#43;] 백준 1477: 휴게소 세우기</title>
       <link>https://parkjoungwan.github.io/blog/nojam1477/</link>
