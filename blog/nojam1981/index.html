@@ -2,7 +2,7 @@
 <html lang="en-us">
 
 <head>
-  <title>[Algorithm, C&#43;&#43;] 백준 2022: 사다리 | kkeujeogblog</title>
+  <title>[Algorithm, C&#43;&#43;] 백준 1981: 배열의 이동 | kkeujeogblog</title>
 
   <meta charset="UTF-8">
   <meta name="language" content="en">
@@ -49,8 +49,8 @@
             "@id": "https:\/\/parkjoungwan.github.io"
       },
       "articleSection" : "blog",
-      "name" : "[Algorithm, C\u002b\u002b] 백준 2022: 사다리",
-      "headline" : "[Algorithm, C\u002b\u002b] 백준 2022: 사다리",
+      "name" : "[Algorithm, C\u002b\u002b] 백준 1981: 배열의 이동",
+      "headline" : "[Algorithm, C\u002b\u002b] 백준 1981: 배열의 이동",
       "description" : "",
       "inLanguage" : "en-US",
       "author" : "",
@@ -59,10 +59,10 @@
       "accountablePerson" : "",
       "copyrightHolder" : "",
       "copyrightYear" : "2021",
-      "datePublished": "2021-04-07 17:38:24 \u002b0900 KST",
-      "dateModified" : "2021-04-07 17:38:24 \u002b0900 KST",
-      "url" : "https:\/\/parkjoungwan.github.io\/blog\/nojam2022\/",
-      "wordCount" : "291",
+      "datePublished": "2021-04-11 17:35:25 \u002b0900 KST",
+      "dateModified" : "2021-04-11 17:35:25 \u002b0900 KST",
+      "url" : "https:\/\/parkjoungwan.github.io\/blog\/nojam1981\/",
+      "wordCount" : "397",
       "keywords" : ["Blog"]
     }
   
@@ -115,59 +115,92 @@ if (!doNotTrack) {
       <div class="post__container">
         <div class="post">
           <header class="post__header">
-            <h1 id="post__title">[Algorithm, C&#43;&#43;] 백준 2022: 사다리</h1>
-            <time datetime="2021-04-07 17:38:24 &#43;0900 KST" class="post__date">2021-04-07</time> 
+            <h1 id="post__title">[Algorithm, C&#43;&#43;] 백준 1981: 배열의 이동</h1>
+            <time datetime="2021-04-11 17:35:25 &#43;0900 KST" class="post__date">2021-04-11</time> 
           </header>
           <article class="post__content">
               
 <h1 id="문제">문제</h1>
-<p>아래의 그림과 같이 높은 빌딩 사이를 따라 좁은 길이 나있다. 두 개의 사다리가 있는데 길이가 x인 사다리는 오른쪽 빌딩의 아래를 받침대로 하여 왼쪽 빌딩에 기대져 있고 길이가 y인 사다리는 왼쪽 빌딩의 아래를 받침대로 하여 오른쪽 빌딩에 기대져 있다. 그리고 두 사다리는 땅에서부터 정확하게 c인 지점에서 서로 교차한다. 그렇다면 두 빌딩은 얼마나 떨어져 있는 걸까?</p>
-<p><img src="https://onlinejudgeimages.s3-ap-northeast-1.amazonaws.com/upload/201007/ladd.png" alt="https://onlinejudgeimages.s3-ap-northeast-1.amazonaws.com/upload/201007/ladd.png"></p>
+<p>n×n짜리의 배열이 하나 있다. 이 배열의 (1, 1)에서 (n, n)까지 이동하려고 한다. 이동할 때는 상, 하, 좌, 우의 네 인접한 칸으로만 이동할 수 있다.</p>
+<p>이와 같이 이동하다 보면, 배열에서 몇 개의 수를 거쳐서 이동하게 된다. 이동하기 위해 거쳐 간 수들 중 최댓값과 최솟값의 차이가 가장 작아지는 경우를 구하는 프로그램을 작성하시오.</p>
 <h1 id="예제">예제</h1>
-<pre><code class="language-cpp">30 40 10
+<pre><code class="language-cpp">5
+1 1 3 6 8
+1 2 2 5 5
+4 4 0 3 3
+8 0 2 3 4
+4 3 0 2 1
 </code></pre>
 <h1 id="출력">출력</h1>
-<pre><code class="language-cpp">26.033
+<pre><code class="language-cpp">2
 </code></pre>
 <h1 id="풀이">풀이</h1>
-<p>&ldquo;주어진 값들로 수식을 세워야 한다.&rdquo;</p>
-<p>찾아야 하는 아래쪽, 두 집 사이의 거리 w</p>
-<p>첫번째 집에 걸쳐져 있는 사다리의 높이 h1</p>
-<p>두번째 집에 걸쳐져 있는 사다리의 높이 h2</p>
-<p>두 사다리의 교점에서 수직으로 내린 길이 c
-두 사다리의 교점에서 수직으로 내렸을 때 나눠지는 두 길이 w_1, w_2</p>
-<p>수식을 세웠다면, 0부터 x와 y값 중 작은 값을 기준으로 이분탐색으로 w를 찾아나가면 된다.</p>
-<pre><code class="language-markdown">w = w_1 + w_2
-
-h1 / w = c / w_2
-
-w_2 = cw / h1
-
-h2 / w = c / w_1
-
-w_1 = cw / h2
-
-w = w * c / h2 + w * c /  h1
-
-1 = c (h1 + h2) / (h1 * h2)
-
-&quot;c = (h1 + h2) / (h1 * h2)&quot;
-</code></pre>
+<p>이 문제도 이분탐색 문제다.</p>
+<p>&ldquo;배열의 값을 입력받으면서 end, start 값을 찾고 이분탐색을 진행한다.&rdquo;</p>
+<p>그런데, 이게 가능한지 가능하지 않은지에 대해서 판단하는 기준은,</p>
+<p>&ldquo;BFS로 처음부터 끝까지 진행하면서, 가능하면 end를 줄이고 불가능하면 start를 늘린다.&rdquo;</p>
+<p>이를 반복해서 start와 end가 같아질 때가지 반복하면, 그 값이 차이 값의 최소값이다.</p>
 <h1 id="코드">코드</h1>
 <pre><code class="language-cpp">#include &lt;iostream&gt;
 #include &lt;algorithm&gt;
 #include &lt;vector&gt;
 #include &lt;cmath&gt;
+#include &lt;queue&gt;
+#include &lt;cstring&gt;
 
 using namespace std;
+int N, Max, Min;
+int arr[100][100];
+bool visit[100][100];
+int i, j, k, l;
+int dx[] = {0, 0, 1, -1};
+int dy[] = {1, -1, 0, 0};
 
-double x, y, c;
-
-double fd_width(double mid)
+bool fd_bfs(int mid)
 {
-	double h1 = sqrt(x * x - mid * mid);
-	double h2 = sqrt(y * y - mid * mid);
-	return (h1 * h2)/(h1 + h2);
+	queue&lt; pair&lt;int, int&gt; &gt; que;
+	i = Min;
+	while (i &lt; Max)
+	{
+		memset(visit, true, sizeof(visit));
+		j = 0;
+		while (j &lt; N)
+		{
+			k = 0;
+			while (k &lt; N)
+			{
+				if (i &lt;= arr[j][k] &amp;&amp; arr[j][k] &lt;= i + mid)
+					visit[j][k] = false;
+				k++;
+			}
+			j++;
+		}
+		que.push(make_pair(0,0));
+		while (!que.empty())
+		{
+			int x = que.front().first;
+			int y = que.front().second;
+			que.pop();
+
+			if (visit[x][y] == true)
+				continue;
+			visit[x][y] = true;
+			if (x == N - 1 &amp;&amp; y == N - 1)
+				return true;
+			l = 0;
+			while (l &lt; 4)
+			{
+				int nx = x + dx[l];
+				int ny = y + dy[l];
+
+				if (nx &gt;= 0 &amp;&amp; ny &gt;= 0 &amp;&amp; nx &lt; N &amp;&amp; ny &lt; N)
+					que.push(make_pair(nx, ny));
+				l++;
+			}
+		}
+		i++;
+	}
+	return false;
 }
 
 int main()
@@ -176,26 +209,37 @@ int main()
 	cin.tie(NULL);
 	cout.tie(NULL);
 
-	cin &gt;&gt; x &gt;&gt; y &gt;&gt; c;
-	double start, end, mid;
-	double result;
+	int start, mid, end;
 
-	start = 0;
-	end = min(x, y);
-
-	while (end - start &gt; 0.000001 )
+	Max = -1;
+	Min = 201;
+	cin &gt;&gt; N;
+	i = 0;
+	while (i &lt; N)
 	{
-		mid = (start + end) / 2.0;
-		if (fd_width(mid) &gt;= c)
+		j = 0;
+		while (j &lt; N)
 		{
-			result = mid;
-			start = mid;
+			cin &gt;&gt; arr[i][j];
+			if (arr[i][j] &gt; Max)
+				Max = arr[i][j];
+			if (arr[i][j] &lt; Min)
+				Min = arr[i][j];
+			j++;
 		}
-		else
-			end = mid;
+		i++;
 	}
-	printf(&quot;%.3lf\n&quot;, result);
-	return 0;
+	start = 0;
+	end = Max - Min;
+	while (start &lt;= end)
+	{
+		mid = (start + end) / 2;
+		if (fd_bfs(mid))
+			end = mid - 1;
+		else
+			start = mid + 1;
+	}
+	cout &lt;&lt; end + 1;
 }
 </code></pre>
 
@@ -215,17 +259,12 @@ int main()
 
  <div class="pagination">
   
-    <a class="pagination__item" href="https://parkjoungwan.github.io/blog/nojam1477/">
+    <a class="pagination__item" href="https://parkjoungwan.github.io/blog/nojam2022/">
         <span class="pagination__label">Previous Post</span>
-        <span class="pagination__title">[Algorithm, C&#43;&#43;] 백준 1477: 휴게소 세우기</span>
+        <span class="pagination__title">[Algorithm, C&#43;&#43;] 백준 2022: 사다리</span>
     </a>
   
 
-  
-    <a class="pagination__item" href="https://parkjoungwan.github.io/blog/nojam1981/">
-      <span class="pagination__label">Next Post</span>
-      <span class="pagination__title" >[Algorithm, C&#43;&#43;] 백준 1981: 배열의 이동</span>
-    </a>
   
 </div>
 

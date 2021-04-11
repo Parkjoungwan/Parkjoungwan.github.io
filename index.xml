@@ -7,7 +7,18 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>© {year}</copyright>
-    <lastBuildDate>Wed, 07 Apr 2021 17:38:24 +0900</lastBuildDate><atom:link href="https://parkjoungwan.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 11 Apr 2021 17:35:25 +0900</lastBuildDate><atom:link href="https://parkjoungwan.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>[Algorithm, C&#43;&#43;] 백준 1981: 배열의 이동</title>
+      <link>https://parkjoungwan.github.io/blog/nojam1981/</link>
+      <pubDate>Sun, 11 Apr 2021 17:35:25 +0900</pubDate>
+      
+      <guid>https://parkjoungwan.github.io/blog/nojam1981/</guid>
+      <description>문제 n×n짜리의 배열이 하나 있다. 이 배열의 (1, 1)에서 (n, n)까지 이동하려고 한다. 이동할 때는 상, 하, 좌, 우의 네 인접한 칸으로만 이동할 수 있다.
+이와 같이 이동하다 보면, 배열에서 몇 개의 수를 거쳐서 이동하게 된다. 이동하기 위해 거쳐 간 수들 중 최댓값과 최솟값의 차이가 가장 작아지는 경우를 구하는 프로그램을 작성하시오.
+예제 5 1 1 3 6 8 1 2 2 5 5 4 4 0 3 3 8 0 2 3 4 4 3 0 2 1  출력 2  풀이 이 문제도 이분탐색 문제다.</description>
+    </item>
+    
     <item>
       <title>[Algorithm, C&#43;&#43;] 백준 2022: 사다리</title>
       <link>https://parkjoungwan.github.io/blog/nojam2022/</link>
