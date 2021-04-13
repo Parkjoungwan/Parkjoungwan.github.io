@@ -2,7 +2,7 @@
 <html lang="en-us">
 
 <head>
-  <title>[Algorithm, C&#43;&#43;] 백준 1074: Z | kkeujeogblog</title>
+  <title>[Algorithm, C&#43;&#43;] 백준 4256: 트리 | kkeujeogblog</title>
 
   <meta charset="UTF-8">
   <meta name="language" content="en">
@@ -49,8 +49,8 @@
             "@id": "https:\/\/parkjoungwan.github.io"
       },
       "articleSection" : "blog",
-      "name" : "[Algorithm, C\u002b\u002b] 백준 1074: Z",
-      "headline" : "[Algorithm, C\u002b\u002b] 백준 1074: Z",
+      "name" : "[Algorithm, C\u002b\u002b] 백준 4256: 트리",
+      "headline" : "[Algorithm, C\u002b\u002b] 백준 4256: 트리",
       "description" : "",
       "inLanguage" : "en-US",
       "author" : "",
@@ -59,10 +59,10 @@
       "accountablePerson" : "",
       "copyrightHolder" : "",
       "copyrightYear" : "2021",
-      "datePublished": "2021-04-13 20:24:56 \u002b0900 KST",
-      "dateModified" : "2021-04-13 20:24:56 \u002b0900 KST",
-      "url" : "https:\/\/parkjoungwan.github.io\/blog\/1074\/",
-      "wordCount" : "209",
+      "datePublished": "2021-04-13 21:04:34 \u002b0900 KST",
+      "dateModified" : "2021-04-13 21:04:34 \u002b0900 KST",
+      "url" : "https:\/\/parkjoungwan.github.io\/blog\/4256\/",
+      "wordCount" : "397",
       "keywords" : ["Blog"]
     }
   
@@ -115,66 +115,92 @@ if (!doNotTrack) {
       <div class="post__container">
         <div class="post">
           <header class="post__header">
-            <h1 id="post__title">[Algorithm, C&#43;&#43;] 백준 1074: Z</h1>
-            <time datetime="2021-04-13 20:24:56 &#43;0900 KST" class="post__date">2021-04-13</time> 
+            <h1 id="post__title">[Algorithm, C&#43;&#43;] 백준 4256: 트리</h1>
+            <time datetime="2021-04-13 21:04:34 &#43;0900 KST" class="post__date">2021-04-13</time> 
           </header>
           <article class="post__content">
               
 <h1 id="문제">문제</h1>
-<p>한수는 크기가 2N × 2N인 2차원 배열을 Z모양으로 탐색하려고 한다. 예를 들어, 2×2배열을 왼쪽 위칸, 오른쪽 위칸, 왼쪽 아래칸, 오른쪽 아래칸 순서대로 방문하면 Z모양이다.</p>
-<p><img src="https://upload.acmicpc.net/21c73b56-5a91-43aa-b71f-9b74925c0adc/-/preview/" alt="https://upload.acmicpc.net/21c73b56-5a91-43aa-b71f-9b74925c0adc/-/preview/"></p>
-<p>만약, N &gt; 1이 라서 왼쪽 위에 있는 칸이 하나가 아니라면, 배열을 크기가 2N-1 × 2N-1로 4등분 한 후에 재귀적으로 순서대로 방문한다.</p>
-<p>다음 예는 22 × 22 크기의 배열을 방문한 순서이다.</p>
-<p><img src="https://upload.acmicpc.net/adc7cfae-e84d-4d5c-af8e-ee011f8fff8f/-/preview/" alt="https://upload.acmicpc.net/adc7cfae-e84d-4d5c-af8e-ee011f8fff8f/-/preview/"></p>
-<p>N이 주어졌을 때, r행 c열을 몇 번째로 방문하는지 출력하는 프로그램을 작성하시오.</p>
-<p>다음은 N=3일 때의 예이다.</p>
-<p><img src="https://upload.acmicpc.net/d3e84bb7-9424-4764-ad3a-811e7fcbd53f/-/preview/" alt="https://upload.acmicpc.net/d3e84bb7-9424-4764-ad3a-811e7fcbd53f/-/preview/"></p>
+<p>이진 트리는 매우 중요한 기본 자료 구조이다. 아래 그림은 루트 노드가 유일한 이진 트리이다. 모든 노드는 최대 2개의 자식 노드를 가질 수 있으며, 왼쪽 자식이 순서가 먼저이다. 노드 n개로 이루어진 이진 트리를 BT라고 하자. BT의 노드는 1부터 n까지 유일한 번호가 매겨져 있다.</p>
+<p>아래 그림에 나와있는 BT의 루트는 3번 노드이다. 1번 노드는 오른쪽 자식만 가지고 있고, 4와 7은 왼쪽 자식만 가지고 있다. 3과 6은 왼쪽과 오른쪽 자식을 모두 가지고 있다. 나머지 노드는 모두 자식이 없으며, 이러한 노드는 리프 노드라고 부른다.</p>
+<p><img src="https://www.acmicpc.net/upload/images/tree(2).png" alt="https://www.acmicpc.net/upload/images/tree(2).png"></p>
+<p>BT의 모든 노드를 순회하는 방법은 전위 순회(preorder), 중위 순회(inorder), 후위 순회(postorder)로 총 세 가지가 있다. 이 세 방법은 아래에 C 스타일의 의사 코드로 나와 있다. BT의 노드 v에 대해서, v.left는 왼쪽 자식, v.right는 오른쪽 자식을 나타낸다. v가 왼쪽 자식이 없으면 v.left는 ∅와 같고, 오른쪽 자식이 없으면 v.right는 ∅와 같다.</p>
+<p><img src="https://www.acmicpc.net/upload/images/treeorder.png" alt="https://www.acmicpc.net/upload/images/treeorder.png"></p>
+<p>BT를 전위 순회, 중위 순회한 결과가 주어진다. 즉, 위의 함수 중 preorder(root node of BT)와 inorder(root node of BT)를 호출해서 만든 리스트가 주어진다. 두 순회한 결과를 가지고 다시 BT를 만들 수 있다. BT의 전위, 중위 순회한 결과가 주어졌을 때, 후위 순회했을 때의 결과를 구하는 프로그램을 작성하시오.</p>
+<p>예를 들어, 위의 그림을 전위 순회하면 3,6,5,4,8,7,1,2, 중위 순회하면 5,6,8,4,3,1,2,7이 된다. 이를 이용해 후위 순회하면 5,8,4,6,2,1,7,3이 된다.</p>
 <h1 id="예제">예제</h1>
-<pre><code class="language-cpp">2 3 1
+<pre><code class="language-cpp">2
+4
+3 2 1 4
+2 3 4 1
+8
+3 6 5 4 8 7 1 2
+5 6 8 4 3 1 2 7
 </code></pre>
 <h1 id="출력">출력</h1>
-<pre><code class="language-cpp">11
+<pre><code class="language-cpp">2 4 1 3
+5 8 4 6 2 1 7 3
 </code></pre>
 <h1 id="풀이">풀이</h1>
-<p>이번주는 분할정복 문제다.</p>
-<p>&ldquo;2의 N 제곱씩 나눠서 사분면으로 나눠생각해서 몇 사분면에 속하는지 재귀적으로 접근해서 갯수를 헤아려주면 된다.&rdquo;</p>
+<p>분할정복 문제다.</p>
+<p>&ldquo;전위순회 중위순회 후위순회의 속성을 알아야 하는 문제였다.&rdquo;</p>
+<p><img src="https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&amp;fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2FdCNvrU%2FbtqAOcrroIW%2FgYspbCkUgzkarScAFPdUj1%2Fimg.png" alt="https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2FdCNvrU%2FbtqAOcrroIW%2FgYspbCkUgzkarScAFPdUj1%2Fimg.png"></p>
+<p>(출처: <a href="https://beginthread.tistory.com/79" 
+  
+   target="_blank" rel="noreferrer noopener" 
+>https://beginthread.tistory.com/79</a>
+)
+&ldquo;전위 순회의 결과로 6의 부분 수열, 5의 부분 수열이 있는지 재귀적으로 탐색한다. 중위 순회의 결과로 해당 부분 수열의 경계를 한정한다.&rdquo;</p>
 <h1 id="코드">코드</h1>
 <pre><code class="language-cpp">#include &lt;iostream&gt;
 #include &lt;algorithm&gt;
 #include &lt;vector&gt;
 #include &lt;cmath&gt;
-#include &lt;math.h&gt;
 
 using namespace std;
 
-int N, r, c;
-int result = 0;
-int bear[2][2] = {{0, 1}, {2, 3}};
+int T;
+int N;
+int a[1001];
+int b[1001];
 
-void	fd_check()
+void sol(int i, int l, int r)
 {
-	int num = pow(2, N);
-	int beary = (num / 2) - 1 &lt; r ? 1 : 0;
-	int bearx = (num / 2) - 1 &lt; c ? 1 : 0;
-	N--;
-	result += bear[beary][bearx] * pow(2, N) * pow(2, N);
-	if (beary)
-		r -= pow(2, N);
-	if (bearx)
-		c -= pow(2, N);
-	if (N == 0)
+	if (l &gt; r)
 		return;
-	fd_check();
+	if (l == r)
+	{
+		cout &lt;&lt; a[i] &lt;&lt; ' ';
+		return;
+	}
+	int tmp = b[a[i]];
+	sol(i + 1, l, tmp - 1);
+	sol(i + tmp - l + 1, tmp + 1, r);
+	cout &lt;&lt; a[i] &lt;&lt; ' ';
 }
 
-int		main()
+int main()
 {
 	ios::sync_with_stdio(false);
 	cin.tie(NULL);
 	cout.tie(NULL);
-	cin &gt;&gt; N &gt;&gt; r &gt;&gt; c;
-	fd_check();
-	cout &lt;&lt; result;
+
+	cin &gt;&gt; T;
+	while (T--)
+	{
+		cin &gt;&gt; N;
+		for (int i = 1; i &lt;= N; ++i)
+			cin &gt;&gt; a[i];
+		for (int i = 1; i &lt;= N; ++i)
+		{
+			int tmp;
+			cin &gt;&gt; tmp;
+			b[tmp] = i;
+		}
+
+		sol(1, 1, N);
+		cout &lt;&lt; '\n';
+	}
 	return 0;
 }
 </code></pre>
@@ -195,17 +221,12 @@ int		main()
 
  <div class="pagination">
   
-    <a class="pagination__item" href="https://parkjoungwan.github.io/blog/nojam1981/">
+    <a class="pagination__item" href="https://parkjoungwan.github.io/blog/1074/">
         <span class="pagination__label">Previous Post</span>
-        <span class="pagination__title">[Algorithm, C&#43;&#43;] 백준 1981: 배열의 이동</span>
+        <span class="pagination__title">[Algorithm, C&#43;&#43;] 백준 1074: Z</span>
     </a>
   
 
-  
-    <a class="pagination__item" href="https://parkjoungwan.github.io/blog/4256/">
-      <span class="pagination__label">Next Post</span>
-      <span class="pagination__title" >[Algorithm, C&#43;&#43;] 백준 4256: 트리</span>
-    </a>
   
 </div>
 

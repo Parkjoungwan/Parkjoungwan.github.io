@@ -7,7 +7,17 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>© {year}</copyright>
-    <lastBuildDate>Tue, 13 Apr 2021 20:24:56 +0900</lastBuildDate><atom:link href="https://parkjoungwan.github.io/tags/c++/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 13 Apr 2021 21:04:34 +0900</lastBuildDate><atom:link href="https://parkjoungwan.github.io/tags/c++/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>[Algorithm, C&#43;&#43;] 백준 4256: 트리</title>
+      <link>https://parkjoungwan.github.io/blog/4256/</link>
+      <pubDate>Tue, 13 Apr 2021 21:04:34 +0900</pubDate>
+      
+      <guid>https://parkjoungwan.github.io/blog/4256/</guid>
+      <description>문제 이진 트리는 매우 중요한 기본 자료 구조이다. 아래 그림은 루트 노드가 유일한 이진 트리이다. 모든 노드는 최대 2개의 자식 노드를 가질 수 있으며, 왼쪽 자식이 순서가 먼저이다. 노드 n개로 이루어진 이진 트리를 BT라고 하자. BT의 노드는 1부터 n까지 유일한 번호가 매겨져 있다.
+아래 그림에 나와있는 BT의 루트는 3번 노드이다. 1번 노드는 오른쪽 자식만 가지고 있고, 4와 7은 왼쪽 자식만 가지고 있다. 3과 6은 왼쪽과 오른쪽 자식을 모두 가지고 있다. 나머지 노드는 모두 자식이 없으며, 이러한 노드는 리프 노드라고 부른다.</description>
+    </item>
+    
     <item>
       <title>[Algorithm, C&#43;&#43;] 백준 1074: Z</title>
       <link>https://parkjoungwan.github.io/blog/1074/</link>
