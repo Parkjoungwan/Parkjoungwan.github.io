@@ -2,7 +2,7 @@
 <html lang="en-us">
 
 <head>
-  <title>[Algorithm, C&#43;&#43;] 백준 1068: 트리 | kkeujeogblog</title>
+  <title>[Algorithm, C&#43;&#43;] 백준 1062: 가르침 | kkeujeogblog</title>
 
   <meta charset="UTF-8">
   <meta name="language" content="en">
@@ -49,8 +49,8 @@
             "@id": "https:\/\/parkjoungwan.github.io"
       },
       "articleSection" : "blog",
-      "name" : "[Algorithm, C\u002b\u002b] 백준 1068: 트리",
-      "headline" : "[Algorithm, C\u002b\u002b] 백준 1068: 트리",
+      "name" : "[Algorithm, C\u002b\u002b] 백준 1062: 가르침",
+      "headline" : "[Algorithm, C\u002b\u002b] 백준 1062: 가르침",
       "description" : "",
       "inLanguage" : "en-US",
       "author" : "",
@@ -59,10 +59,10 @@
       "accountablePerson" : "",
       "copyrightHolder" : "",
       "copyrightYear" : "2021",
-      "datePublished": "2021-04-20 22:39:53 \u002b0900 KST",
-      "dateModified" : "2021-04-20 22:39:53 \u002b0900 KST",
-      "url" : "https:\/\/parkjoungwan.github.io\/blog\/1068\/",
-      "wordCount" : "269",
+      "datePublished": "2021-04-25 15:25:39 \u002b0900 KST",
+      "dateModified" : "2021-04-25 15:25:39 \u002b0900 KST",
+      "url" : "https:\/\/parkjoungwan.github.io\/blog\/1062\/",
+      "wordCount" : "351",
       "keywords" : ["Blog"]
     }
   
@@ -115,66 +115,64 @@ if (!doNotTrack) {
       <div class="post__container">
         <div class="post">
           <header class="post__header">
-            <h1 id="post__title">[Algorithm, C&#43;&#43;] 백준 1068: 트리</h1>
-            <time datetime="2021-04-20 22:39:53 &#43;0900 KST" class="post__date">2021-04-20</time> 
+            <h1 id="post__title">[Algorithm, C&#43;&#43;] 백준 1062: 가르침</h1>
+            <time datetime="2021-04-25 15:25:39 &#43;0900 KST" class="post__date">2021-04-25</time> 
           </header>
           <article class="post__content">
               
 <h1 id="문제">문제</h1>
-<p>트리에서 리프 노드란, 자식의 개수가 0인 노드를 말한다.</p>
-<p>트리가 주어졌을 때, 노드 하나를 지울 것이다. 그 때, 남은 트리에서 리프 노드의 개수를 구하는 프로그램을 작성하시오. 노드를 지우면 그 노드와 노드의 모든 자손이 트리에서 제거된다.</p>
-<p>예를 들어, 다음과 같은 트리가 있다고 하자.</p>
-<p><img src="https://upload.acmicpc.net/560de878-d961-475e-ada4-e1f0774e5a84/-/preview/" alt="https://upload.acmicpc.net/560de878-d961-475e-ada4-e1f0774e5a84/-/preview/"></p>
-<p>현재 리프 노드의 개수는 3개이다. (초록색 색칠된 노드) 이때, 1번을 지우면, 다음과 같이 변한다. 검정색으로 색칠된 노드가 트리에서 제거된 노드이다.</p>
-<p><img src="https://upload.acmicpc.net/d46ddf4e-1b82-44cc-8c90-12f76e5bf88f/-/preview/" alt="https://upload.acmicpc.net/d46ddf4e-1b82-44cc-8c90-12f76e5bf88f/-/preview/"></p>
-<p>이제 리프 노드의 개수는 1개이다.</p>
+<p>남극에 사는 김지민 선생님은 학생들이 되도록이면 많은 단어를 읽을 수 있도록 하려고 한다. 그러나 지구온난화로 인해 얼음이 녹아서 곧 학교가 무너지기 때문에, 김지민은 K개의 글자를 가르칠 시간 밖에 없다. 김지민이 가르치고 난 후에는, 학생들은 그 K개의 글자로만 이루어진 단어만을 읽을 수 있다. 김지민은 어떤 K개의 글자를 가르쳐야 학생들이 읽을 수 있는 단어의 개수가 최대가 되는지 고민에 빠졌다.</p>
+<p>남극언어의 모든 단어는 &ldquo;anta&quot;로 시작되고, &ldquo;tica&quot;로 끝난다. 남극언어에 단어는 N개 밖에 없다고 가정한다. 학생들이 읽을 수 있는 단어의 최댓값을 구하는 프로그램을 작성하시오.</p>
 <h1 id="예제">예제</h1>
-<pre><code class="language-cpp">5
--1 0 0 1 1
-2
+<pre><code class="language-cpp">3 6
+antarctica
+antahellotica
+antacartica
 </code></pre>
 <h1 id="출력">출력</h1>
 <pre><code class="language-cpp">2
 </code></pre>
 <h1 id="풀이">풀이</h1>
-<p>bfs로 트리를 탐색하는 문제였다.</p>
-<p>주어진 정보로 트리 정보를 tree에 저장하고, bfs를 이용해서 삭제한 노드가 아니거나 이전에 방문한 노드가아니면, 해당 노드를 큐에 넣고 만약 후에 그 노드에 자식이 있다면 해당 노드의 visit값을 또 증가시켜 주고 자식노드를 1증가시킨다.</p>
-<p>따라서 말단 노드의 visit배열의 값이 1이 되므로, 1인 값들만 갯수를 세서 출력하면 문제에서 요구하는 답이된다.</p>
+<p>이 문제도 &lsquo;비트마스크&rsquo; 문제였다.</p>
+<p>문제의 키가 되는 부분은, 26개의 알파벳 중 가르친 알파벳을 하나의 이진수로 나타낼 수 있는가 였다.</p>
+<p>이진수 26 자릿수를 각각 26개의 알파벳의 유무로 볼 때, 각 알파벳을 우리가배운 알파벳을 나타내는 &lsquo;learn&rsquo; 변수의 지정된 자릿수에 추가해가면서 DFS 탐색을 하면 최대로 읽을 수 있는 단어수를 찾으면 정답을 찾을 수 있다.</p>
 <h1 id="코드">코드</h1>
 <pre><code class="language-cpp">#include &lt;iostream&gt;
 #include &lt;algorithm&gt;
 #include &lt;vector&gt;
-#include &lt;queue&gt;
+#include &lt;cmath&gt;
 #include &lt;cstring&gt;
 
 using namespace std;
 
-vector&lt;int&gt; tree[51];
-int visit[51];
-int root, res;
+int learn;
+int n, k;
+int word[50];
 
-void bfs(int del)
+int	ft_dfs(int start, int alnum)
 {
-	memset(visit, 0, sizeof(visit));
-	queue&lt;int&gt; q;
-	if (root == del) return;
-	q.push(root);
-	visit[root] = 1;
+	int ret;
 
-	while (!q.empty())
+	ret = 0;
+	if (alnum == k)
 	{
-		int x = q.front();
-		q.pop();
-
-		for (int i = 0; i &lt; tree[x].size(); i++)
+		for (int i = 0; i &lt; n; i ++)
 		{
-			int nx = tree[x][i];
-			if (nx == del || visit[nx] != 0)continue;
-			q.push(nx);
-			visit[x]++;
-			visit[nx] = 1;
+			if ((word[i] &amp; learn) == word[i])
+				ret++;
+		}
+		return ret;
+	}
+	for (int i = start; i &lt; 26; i++)
+	{
+		if ((learn &amp; (1 &lt;&lt; i)) == 0)
+		{
+			learn |= 1 &lt;&lt; i;
+			ret = max (ret, ft_dfs(i + 1, alnum + 1));
+			learn &amp;= ~(1 &lt;&lt; i);
 		}
 	}
+	return ret;
 }
 
 int main()
@@ -182,25 +180,30 @@ int main()
 	ios::sync_with_stdio(false);
 	cin.tie(NULL);
 	cout.tie(NULL);
-	int n;
-	cin &gt;&gt; n;
-	int tmp;
+	learn |= 1 &lt;&lt; ('a' - 'a');
+	learn |= 1 &lt;&lt; ('n' - 'a');
+	learn |= 1 &lt;&lt; ('t' - 'a');
+	learn |= 1 &lt;&lt; ('i' - 'a');
+	learn |= 1 &lt;&lt; ('c' - 'a');
+
+	cin &gt;&gt; n &gt;&gt; k;
+
 	for (int i = 0; i &lt; n; i++)
 	{
-		cin &gt;&gt; tmp;
-		if (tmp == -1) root = i;
-		else tree[tmp].push_back(i);
+		string str;
+		cin &gt;&gt; str;
+		for (int j = 0; j &lt; str.length(); j++)
+		{
+			word[i] |= 1 &lt;&lt; (str[j] - 'a');
+		}
 	}
-
-	int del;
-	cin &gt;&gt; del;
-	bfs(del);
-
-	res = 0;
-	for (int i = 0; i &lt; n; i++)
-		if (visit[i] == 1)
-			res++;
-	cout &lt;&lt; res;
+	if (k &lt; 5 || k == 26)
+	{
+		cout &lt;&lt; (k == 26 ? n : 0);
+		return 0;
+	}
+	cout &lt;&lt; ft_dfs(1, 5);
+	return 0;
 }
 </code></pre>
 
@@ -215,22 +218,17 @@ int main()
         <a class="tag__link" href="https://parkjoungwan.github.io/tags/algorithm/">Algorithm</a>
     </li>
     <li class="tag__item">
-        <a class="tag__link" href="https://parkjoungwan.github.io/tags/c&#43;&#43;/">C&#43;&#43;</a>
+        <a class="tag__link" href="https://parkjoungwan.github.io/tags/c&#43;/">C&#43;</a>
     </li></ul>
 
  <div class="pagination">
   
-    <a class="pagination__item" href="https://parkjoungwan.github.io/blog/11437/">
+    <a class="pagination__item" href="https://parkjoungwan.github.io/blog/15787/">
         <span class="pagination__label">Previous Post</span>
-        <span class="pagination__title">[Algorithm, C&#43;&#43;] 백준 11437: LCA</span>
+        <span class="pagination__title">[Algorithm, C&#43;&#43;] 백준 15787: 기차가 어둠을 헤치고 은하수를</span>
     </a>
   
 
-  
-    <a class="pagination__item" href="https://parkjoungwan.github.io/blog/15787/">
-      <span class="pagination__label">Next Post</span>
-      <span class="pagination__title" >[Algorithm, C&#43;&#43;] 백준 15787: 기차가 어둠을 헤치고 은하수를</span>
-    </a>
   
 </div>
 
