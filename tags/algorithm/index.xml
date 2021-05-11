@@ -7,7 +7,107 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>© {year}</copyright>
-    <lastBuildDate>Tue, 04 May 2021 23:04:06 +0900</lastBuildDate><atom:link href="https://parkjoungwan.github.io/tags/algorithm/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 11 May 2021 20:52:06 +0900</lastBuildDate><atom:link href="https://parkjoungwan.github.io/tags/algorithm/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>[Algorithm, C&#43;&#43;] 백준 9661 : 돌 게임 7</title>
+      <link>https://parkjoungwan.github.io/blog/9661/</link>
+      <pubDate>Tue, 11 May 2021 20:52:06 +0900</pubDate>
+      
+      <guid>https://parkjoungwan.github.io/blog/9661/</guid>
+      <description>문제 돌 게임은 두 명이서 즐기는 재밌는 게임이다.
+탁자 위에 돌 N개가 있다. 상근이와 창영이는 턴을 번갈아가면서 돌을 가져가며, 돌은 4x개 만큼 가져갈 수 있다. 즉, 가능한 개수는 1, 4, 16, 64, &amp;hellip;개 이다. 4x개만큼 돌을 가져갈 수 있는 방법이 없는 사람이 게임을 지게 된다.
+두 사람이 완벽하게 게임을 했을 때, 이기는 사람을 구하는 프로그램을 작성하시오. 게임은 상근이가 먼저 시작한다.
+예제 3  출력 SK  풀이 승패승승패/승패승승패
+코드 #include &amp;lt;iostream&amp;gt; #include &amp;lt;algorithm&amp;gt; #include &amp;lt;vector&amp;gt; #include &amp;lt;cmath&amp;gt; #include &amp;lt;cstring&amp;gt; using namespace std; int main() { ios::sync_with_stdio(false); cin.</description>
+    </item>
+    
+    <item>
+      <title>[Algorithm, C&#43;&#43;] 백준 9660 : 돌 게임 6</title>
+      <link>https://parkjoungwan.github.io/blog/9660/</link>
+      <pubDate>Tue, 11 May 2021 20:51:35 +0900</pubDate>
+      
+      <guid>https://parkjoungwan.github.io/blog/9660/</guid>
+      <description>문제 돌 게임은 두 명이서 즐기는 재밌는 게임이다.
+탁자 위에 돌 N개가 있다. 상근이와 창영이는 턴을 번갈아가면서 돌을 가져가며, 돌은 1개, 3개 또는 4개 가져갈 수 있다. 마지막 돌을 가져가는 사람이 게임을 이기게 된다.
+두 사람이 완벽하게 게임을 했을 때, 이기는 사람을 구하는 프로그램을 작성하시오. 게임은 상근이가 먼저 시작한다.
+예제 6  출력 SK  풀이 앞에서 푼 문제다. 입력값이 dp로 못풀게 나온다.
+어차피 dp로 안 풀었다.
+코드 #include &amp;lt;iostream&amp;gt; #include &amp;lt;algorithm&amp;gt; #include &amp;lt;vector&amp;gt; #include &amp;lt;cmath&amp;gt; #include &amp;lt;cstring&amp;gt; using namespace std; int main() { ios::sync_with_stdio(false); cin.</description>
+    </item>
+    
+    <item>
+      <title>[Algorithm, C&#43;&#43;] 백준 9659 : 돌 게임 5</title>
+      <link>https://parkjoungwan.github.io/blog/9659/</link>
+      <pubDate>Tue, 11 May 2021 20:51:00 +0900</pubDate>
+      
+      <guid>https://parkjoungwan.github.io/blog/9659/</guid>
+      <description>문제 돌 게임은 두 명이서 즐기는 재밌는 게임이다.
+탁자 위에 돌 N개가 있다. 상근이와 창영이는 턴을 번갈아가면서 돌을 가져가며, 돌은 1개 또는 3개 가져갈 수 있다. 마지막 돌을 가져가는 사람이 게임을 이기게 된다.
+두 사람이 완벽하게 게임을 했을 때, 이기는 사람을 구하는 프로그램을 작성하시오. 게임은 상근이가 먼저 시작한다.
+예제 5  출력 SK  풀이 앞에서 푼 문제다. 입력값이 dp로 못풀게 나온다.
+어차피 dp로 안 풀었다.
+코드 #include &amp;lt;iostream&amp;gt; #include &amp;lt;algorithm&amp;gt; #include &amp;lt;vector&amp;gt; #include &amp;lt;cmath&amp;gt; #include &amp;lt;cstring&amp;gt; using namespace std; int main() { ios::sync_with_stdio(false); cin.</description>
+    </item>
+    
+    <item>
+      <title>[Algorithm, C&#43;&#43;] 백준 9658 : 돌 게임 4</title>
+      <link>https://parkjoungwan.github.io/blog/9658/</link>
+      <pubDate>Tue, 11 May 2021 20:50:13 +0900</pubDate>
+      
+      <guid>https://parkjoungwan.github.io/blog/9658/</guid>
+      <description>문제 돌 게임은 두 명이서 즐기는 재밌는 게임이다.
+탁자 위에 돌 N개가 있다. 상근이와 창영이는 턴을 번갈아가면서 돌을 가져가며, 돌은 1개, 3개 또는 4개 가져갈 수 있다. 마지막 돌을 가져가는 사람이 게임을 지게 된다.
+두 사람이 완벽하게 게임을 했을 때, 이기는 사람을 구하는 프로그램을 작성하시오. 게임은 상근이가 먼저 시작한다.
+예제 6  출력 SK  풀이 자, 패승패승승승승/패승패승승승승이다.
+뭔말인지 알거라 믿는다.
+코드 #include &amp;lt;iostream&amp;gt; #include &amp;lt;algorithm&amp;gt; #include &amp;lt;vector&amp;gt; #include &amp;lt;cmath&amp;gt; #include &amp;lt;cstring&amp;gt; using namespace std; int main() { ios::sync_with_stdio(false); cin.</description>
+    </item>
+    
+    <item>
+      <title>[Algorithm, C&#43;&#43;] 백준 9657: 돌 게임 3</title>
+      <link>https://parkjoungwan.github.io/blog/9657/</link>
+      <pubDate>Tue, 11 May 2021 20:49:25 +0900</pubDate>
+      
+      <guid>https://parkjoungwan.github.io/blog/9657/</guid>
+      <description>문제 돌 게임은 두 명이서 즐기는 재밌는 게임이다.
+탁자 위에 돌 N개가 있다. 상근이와 창영이는 턴을 번갈아가면서 돌을 가져가며, 돌은 1개, 3개 또는 4개 가져갈 수 있다. 마지막 돌을 가져가는 사람이 게임을 이기게 된다.
+두 사람이 완벽하게 게임을 했을 때, 이기는 사람을 구하는 프로그램을 작성하시오. 게임은 상근이가 먼저 시작한다.
+예제 6  출력 SK  풀이 규칙이 있다.
+승패승승승승패/승패승승승승패
+패턴을 배열에 저장하고 나눈 나머지값으로 제자리를 찾아가자.
+코드 #include &amp;lt;iostream&amp;gt; #include &amp;lt;algorithm&amp;gt; #include &amp;lt;vector&amp;gt; #include &amp;lt;cmath&amp;gt; #include &amp;lt;cstring&amp;gt; using namespace std; int main() { ios::sync_with_stdio(false); cin.</description>
+    </item>
+    
+    <item>
+      <title>[Algorithm, C&#43;&#43;] 백준 9656: 돌 게임2</title>
+      <link>https://parkjoungwan.github.io/blog/9656/</link>
+      <pubDate>Tue, 11 May 2021 20:48:37 +0900</pubDate>
+      
+      <guid>https://parkjoungwan.github.io/blog/9656/</guid>
+      <description>문제 돌 게임은 두 명이서 즐기는 재밌는 게임이다.
+탁자 위에 돌 N개가 있다. 상근이와 창영이는 턴을 번갈아가면서 돌을 가져가며, 돌은 1개 또는 3개 가져갈 수 있다. 마지막 돌을 가져가는 사람이 게임을 지게 된다.
+두 사람이 완벽하게 게임을 했을 때, 이기는 사람을 구하는 프로그램을 작성하시오. 게임은 상근이가 먼저 시작한다.
+예제 4  출력 SK  풀이 전 돌게임 1의 반대다
+패승패승.
+그냥 출력만 바꾸자.
+코드 #include &amp;lt;iostream&amp;gt; #include &amp;lt;algorithm&amp;gt; #include &amp;lt;vector&amp;gt; #include &amp;lt;cmath&amp;gt; #include &amp;lt;cstring&amp;gt; using namespace std; int main() { ios::sync_with_stdio(false); cin.</description>
+    </item>
+    
+    <item>
+      <title>[Algorithm, C&#43;&#43;] 백준 9655: 돌 게임</title>
+      <link>https://parkjoungwan.github.io/blog/9655/</link>
+      <pubDate>Tue, 11 May 2021 20:47:49 +0900</pubDate>
+      
+      <guid>https://parkjoungwan.github.io/blog/9655/</guid>
+      <description>문제 돌 게임은 두 명이서 즐기는 재밌는 게임이다.
+탁자 위에 돌 N개가 있다. 상근이와 창영이는 턴을 번갈아가면서 돌을 가져가며, 돌은 1개 또는 3개 가져갈 수 있다. 마지막 돌을 가져가는 사람이 게임을 이기게 된다.
+두 사람이 완벽하게 게임을 했을 때, 이기는 사람을 구하는 프로그램을 작성하시오. 게임은 상근이가 먼저 시작한다.
+예제 5  출력 SK  풀이 자, 돌게임이다.
+규칙성이 있다.
+승패승패승패승패 무한 반복.
+따라서, 4로 나눈 나머지가 짝수인지 홀수인지 알면 누가 이겼는지 알 수 있다.</description>
+    </item>
+    
     <item>
       <title>[Algorithm, C&#43;&#43;] 백준 11868: 최솟값</title>
       <link>https://parkjoungwan.github.io/blog/11868/</link>
