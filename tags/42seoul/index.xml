@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>42Seoul on kkeujeogblog</title>
+    <link>https://parkjoungwan.github.io/tags/42seoul/</link>
+    <description>Recent content in 42Seoul on kkeujeogblog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>© {year}</copyright>
+    <lastBuildDate>Mon, 17 May 2021 18:17:41 +0900</lastBuildDate><atom:link href="https://parkjoungwan.github.io/tags/42seoul/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>[Docker, ft_server]FT_SERVER 튜토리얼</title>
+      <link>https://parkjoungwan.github.io/blog/ft_server_2/</link>
+      <pubDate>Mon, 17 May 2021 18:17:41 +0900</pubDate>
+      
+      <guid>https://parkjoungwan.github.io/blog/ft_server_2/</guid>
+      <description>FT_SERVER 안 읽어도 되는 부분(전후상황) 드디어, 지난 주 목요일 EXAM02를 통과했다. 라 피씬 이후 첫 EXAM 통과였다.
+EXAM02는 CIr1에 해당하는 내용을 다루고 있었고, GNL을 구현하는 문제가 나와 어렵사리 통과할 수 있었다.
+그렇다.
+이제 난 당당히 Cir2에 해당하는 서브젝트들을 풀어볼 수 있는 자격을 얻게 된 것이다.
+하하하(사악한 악당 웃음)
+ft_server 분석 ft_server는 도커 사용에 초점을 맞춘 서브젝트인 것 같다.
+도커를 사용해 데비안 버스터라는 OS의 이미지를 가져오고 그 위에 Nginx라는 웹 서버 소프트웨어를 가동시키고 그리고 그 위에 wordpress, php-fpm, MariaDB(mysql), phpMyAdmin등을 얹어 특정한 하나의 OS와 웹 서버를 만들어 보는 것 이다.</description>
+    </item>
+    
+  </channel>
+</rss>
