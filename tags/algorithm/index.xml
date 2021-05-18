@@ -7,7 +7,41 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>© {year}</copyright>
-    <lastBuildDate>Tue, 11 May 2021 20:52:06 +0900</lastBuildDate><atom:link href="https://parkjoungwan.github.io/tags/algorithm/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 18 May 2021 20:34:05 +0900</lastBuildDate><atom:link href="https://parkjoungwan.github.io/tags/algorithm/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>[Algorithm, C&#43;&#43;] 백준 1644 : 소수의 연속합</title>
+      <link>https://parkjoungwan.github.io/blog/1644/</link>
+      <pubDate>Tue, 18 May 2021 20:34:05 +0900</pubDate>
+      
+      <guid>https://parkjoungwan.github.io/blog/1644/</guid>
+      <description>문제 하나 이상의 연속된 소수의 합으로 나타낼 수 있는 자연수들이 있다. 몇 가지 자연수의 예를 들어 보면 다음과 같다.
+ 3 : 3 (한 가지) 41 : 2+3+5+7+11+13 = 11+13+17 = 41 (세 가지) 53 : 5+7+11+13+17 = 53 (두 가지)  하지만 연속된 소수의 합으로 나타낼 수 없는 자연수들도 있는데, 20이 그 예이다. 7+13을 계산하면 20이 되기는 하나 7과 13이 연속이 아니기에 적합한 표현이 아니다. 또한 한 소수는 반드시 한 번만 덧셈에 사용될 수 있기 때문에, 3+5+5+7과 같은 표현도 적합하지 않다.</description>
+    </item>
+    
+    <item>
+      <title>[Algorithm, C&#43;&#43;] 백준 1806 : 부분합</title>
+      <link>https://parkjoungwan.github.io/blog/1806/</link>
+      <pubDate>Tue, 18 May 2021 20:33:05 +0900</pubDate>
+      
+      <guid>https://parkjoungwan.github.io/blog/1806/</guid>
+      <description>문제 10,000 이하의 자연수로 이루어진 길이 N짜리 수열이 주어진다. 이 수열에서 연속된 수들의 부분합 중에 그 합이 S 이상이 되는 것 중, 가장 짧은 것의 길이를 구하는 프로그램을 작성하시오.
+예제 10 15 5 1 3 5 10 7 4 9 2 8  출력 2  풀이 두 포인터 문제이다.
+구간 합이 특정 값보다 큰 수열을 찾는데, 가장 작은 수열의 크기를 반환해야한다.
+이전에 풀었던 두 포인터 탐색방법을 그대로 사용하되, 그 수열의 크기를 count를 통해 찾아주고, result라는 값에 넣어 작은 값을 계속 업데이트할 수 있게 했다.</description>
+    </item>
+    
+    <item>
+      <title>[Algorithm, C&#43;&#43;] 백준 2003 : 수들의 합 2</title>
+      <link>https://parkjoungwan.github.io/blog/2003/</link>
+      <pubDate>Tue, 18 May 2021 20:32:18 +0900</pubDate>
+      
+      <guid>https://parkjoungwan.github.io/blog/2003/</guid>
+      <description>문제 N개의 수로 된 수열 A[1], A[2], …, A[N] 이 있다. 이 수열의 i번째 수부터 j번째 수까지의 합 A[i] + A[i+1] + … + A[j-1] + A[j]가 M이 되는 경우의 수를 구하는 프로그램을 작성하시오.
+예제 4 2 1 1 1 1  출력 3  풀이 두 포인터문제이다.
+두개의 포인터를 사용해서 배열을 탐색하는 문제였다.
+하나의 배열을 탐색을 두고 특정 값이 되는 구간합을 구하려면, 2중 반복문을 사용하게되면 O(N^2)의 복잡도를 갖게 된다.</description>
+    </item>
+    
     <item>
       <title>[Algorithm, C&#43;&#43;] 백준 9661 : 돌 게임 7</title>
       <link>https://parkjoungwan.github.io/blog/9661/</link>
